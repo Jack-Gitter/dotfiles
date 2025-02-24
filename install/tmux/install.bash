@@ -16,7 +16,7 @@ if ! command -v "git" >/dev/null 2>&1; then
 fi
 
 
-if  [ ! -d "~/.tmux/plugins/tpm/" ]; then
+if  [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
     echo "installing tpm..."
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
