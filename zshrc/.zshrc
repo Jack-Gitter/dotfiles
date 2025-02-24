@@ -1,5 +1,5 @@
-export STARSHIP_CONFIG=~/.config/starshipconfig/starship.toml
-export HOME=~/.config/dotfiles/
+export XDG_CONFIG_HOME=~/.config/dotfiles
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starshipconfig/starship.toml
 
 eval "$(starship init zsh)"
 
