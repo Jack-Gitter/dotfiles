@@ -9,3 +9,4 @@ vim.opt.updatetime = 1000
 vim.opt.ignorecase = true
 vim.o.cmdheight = 0
 vim.o.splitright = true
+vim.o.splitbelow = true
