@@ -15,4 +15,9 @@ if ! command -v "git" >/dev/null 2>&1; then
     brew install git
 fi
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+if  [ ! -d "~/.tmux/plugins/tpm/" ]; then
+    echo "installing tpm..."
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
