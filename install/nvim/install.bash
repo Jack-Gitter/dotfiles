@@ -1,8 +1,10 @@
-#!bin/bash
+#!/bin/bash
 
-if ! [-x "$(command -v brew)"]; then 
+if ! command -v "brew" >/dev/null 2>&1; then
     curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+fi
 
-if ! [-x "$(command -v nvim)"] then
+if ! command -v "nvim" >/dev/null 2>&1; then
     brew install neovim
+fi
 

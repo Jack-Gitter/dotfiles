@@ -1,12 +1,15 @@
-#!bin/bash
+#!/bin/sh
 
-if ! [-x "$(command -v brew)"]; then 
+if ! command -v "brew" >/dev/null 2>&1; then
     curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+fi
 
-if ! [-x "$(command -V tmux)"]; then 
+if ! command -v "tmux" >/dev/null 2>&1; then
     brew install tmux
+fi
 
-if ! [-x "$(command -v git)"]; then 
+if ! command -v "git" >/dev/null 2>&1; then
     brew install git
+fi
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
