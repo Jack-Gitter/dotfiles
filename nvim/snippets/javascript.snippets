@@ -1,0 +1,20 @@
+snippet filter 
+	const $1 = ${VISUAL}.filter((${2:val}) => {
+		return $4
+	})
+
+snippet map 
+	const $1 = ${VISUAL}.map((${3:val}) => {
+		return $3 $4
+	})
+
+snippet find 
+	const found = ${VISUAL}.find((${1:val}) => {
+		return $1 $2
+	})
+
+snippet slice
+	const $1 = ${VISUAL}.slice(${2:startIndex}, ${3:endIndex})
+
+snippet splice 
+	${VISUAL}.splice(${1:start}, ${2:deleteCount}, ${3:item})

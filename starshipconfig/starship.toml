@@ -1,0 +1,36 @@
+format = '''$directory $git_branch$git_state$git_status 
+$newline
+$character '''
+
+add_newline = true
+
+palette = 'colors'
+
+[palettes.colors]
+light-blue = '#92f2fc'
+
+[git_branch]
+symbol = '🌱'
+format = 'on [\[$symbol $branch](italic bold bright-green)'
+style = "bright-black"
+
+[git_status]
+format = '[[(*$conflicted$untracked$modified$staged$renamed$deleted)](italic bold bright-green)($ahead_behind$stashed)\]](italic bold bright-green)'
+style = "cyan"
+stashed = "≡"
+
+[git_state]
+format = '\([$state($progress_current/$progress_total)]($style)\) '
+style = "italic bold bright-green"
+
+[directory]
+style = "blue"
+truncation_length = 2
+format = '[\[$path\]](italic bold white)'
+
+[character]
+success_symbol = "[❯](bold white)"
+error_symbol = "[✗](bold red)"
+
+
+
