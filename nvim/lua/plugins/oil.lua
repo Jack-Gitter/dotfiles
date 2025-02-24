@@ -9,7 +9,7 @@ return {
         keymaps = {
             ["b"] = { "actions.parent", mode = "n" },
             ["<esc>"] = { "actions.close", mode = "n" },
-            ["<c-h>"] = { "actions.toggle_hidden", mode = "n" }
+            ["<leader>hh"] = { "actions.toggle_hidden", mode = "n" }
         },
     },
     config = function(_, opts)
