@@ -27,7 +27,6 @@ return {
             vim.keymap.set("n", "<leader>ho", vim.lsp.buf.hover, { buffer = true })
             local ft = vim.bo.filetype
             if client.supports_method("textDocument/formatting") and ft ~= "python" and ft ~= "javascript" and ft ~= "typescript" then
-                vim.print("we are making auto cmd on save")
                 vim.api.nvim_create_autocmd("BufWritePre", {
                     buffer = bufnr,
                     callback = function()
