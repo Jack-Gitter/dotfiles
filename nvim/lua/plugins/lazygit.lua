@@ -14,7 +14,4 @@ return {
     keys = {
         { "<leader>git", "<cmd>LazyGit<cr>", desc = "LazyGit" }
     },
-    config = function(_, opts)
-        vim.keymap.set({ "n", "t" }, "<esc>", "<c-c>")
-    end
 }
