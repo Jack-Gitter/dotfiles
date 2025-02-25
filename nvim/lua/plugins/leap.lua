@@ -4,7 +4,7 @@ return {
         "tpope/vim-repeat"
     },
     config = function()
-        vim.keymap.set('n', 'f', '<plug>(leap-forward)')
-        vim.keymap.set('n', 'F', '<plug>(leap-backward)')
+        vim.keymap.set({ 'n', 'v' }, 'f', '<plug>(leap-forward)')
+        vim.keymap.set({ 'n', 'v' }, '<s-f>', '<plug>(leap-backward)')
     end
 }
