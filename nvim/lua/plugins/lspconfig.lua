@@ -26,6 +26,15 @@ return {
         local on_attach = function(client, bufnr)
             vim.keymap.set("n", "<leader>ho", vim.lsp.buf.hover, { buffer = true })
             local ft = vim.bo.filetype
+
+            if client.supports_method("textDocument/hover") then
+                vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+                    vim.lsp.handlers.hover, {
+                        border = "single",
+                    }
+                )
+            end
+
             if client.supports_method("textDocument/formatting") and ft ~= "python" and ft ~= "javascript" and ft ~= "typescript" then
                 vim.api.nvim_create_autocmd("BufWritePre", {
                     buffer = bufnr,
@@ -37,7 +46,14 @@ return {
                     end
                 })
             end
+
             if client.supports_method("textDocument/signatureHelp") then
+                vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "red", fg = "white" })
+                vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+                    vim.lsp.handlers.signature_help, {
+                        border = "single"
+                    }
+                )
                 vim.keymap.set("i", "<c-;>", vim.lsp.buf.signature_help)
             end
         end
