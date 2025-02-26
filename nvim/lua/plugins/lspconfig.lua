@@ -28,6 +28,9 @@ return {
 
             if client.supports_method("textDocument/hover") then
                 vim.keymap.set("n", "<leader>ho", vim.lsp.buf.hover, { buffer = true })
+                vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+                    border = "single"
+                })
             end
 
             if client.supports_method("textDocument/diagnostics") then
@@ -49,6 +52,9 @@ return {
             if client.supports_method("textDocument/signatureHelp") then
                 vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#3dabcc", fg = "white" })
                 vim.keymap.set("i", "<c-;>", vim.lsp.buf.signature_help)
+                vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signatureHelp, {
+                    border = "rounded",
+                })
             end
         end
 
