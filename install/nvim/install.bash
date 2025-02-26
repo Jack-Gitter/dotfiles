@@ -15,3 +15,7 @@ if ! command -v "nvim" >/dev/null 2>&1; then
     brew install neovim
 fi
 
+if ! command -v "rg" >/dev/null 2>&1; then
+    echo "installing rg..."
+    brew install ripgrep
+fi
