@@ -48,7 +48,7 @@ return {
             end
 
             if client.supports_method("textDocument/signatureHelp") then
-                vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "red", fg = "white" })
+                vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#3dabcc", fg = "white" })
                 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
                     vim.lsp.handlers.signature_help, {
                         border = "single"

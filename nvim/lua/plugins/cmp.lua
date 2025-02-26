@@ -34,7 +34,7 @@ return {
             ["<c-cr>"] = function() cmp.confirm() end
         }
 
-        vim.api.nvim_set_hl(0, "MyPmenuSel", { bg = "red", fg = "white" })
+        vim.api.nvim_set_hl(0, "MyPmenuSel", { bg = "#3dabcc", fg = "white" })
 
         opts.window = {
             completion = cmp.config.window.bordered({
