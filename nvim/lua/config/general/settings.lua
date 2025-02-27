@@ -10,3 +10,5 @@ vim.opt.ignorecase = true
 vim.o.cmdheight = 0
 vim.o.splitright = true
 vim.o.splitbelow = true
+
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "black" })

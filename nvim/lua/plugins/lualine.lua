@@ -4,6 +4,7 @@ return {
         'nvim-tree/nvim-web-devicons'
     },
     opts = {
+        theme = "dracula-nvim",
         sections = {
             lualine_c = {},
             lualine_x = {},
