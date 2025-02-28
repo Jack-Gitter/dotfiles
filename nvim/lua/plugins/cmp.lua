@@ -31,7 +31,9 @@ return {
         opts.mapping = {
             ["<c-j>"] = function() cmp.select_next_item() end,
             ["<c-k>"] = function() cmp.select_prev_item() end,
-            ["<c-cr>"] = function() cmp.confirm() end
+            ["<c-cr>"] = function() cmp.confirm() end,
+            ['<cs-k>'] = cmp.mapping.scroll_docs(-4),
+            ['<cs-j>'] = cmp.mapping.scroll_docs(4),
         }
 
         vim.api.nvim_set_hl(0, "MyPmenuSel", { bg = "#3dabcc", fg = "white" })
