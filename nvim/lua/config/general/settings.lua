@@ -13,4 +13,4 @@ vim.o.splitbelow = true
 vim.o.cursorline = true
 vim.opt.cursorlineopt = "number"
 
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "pink", })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#30e630", })
