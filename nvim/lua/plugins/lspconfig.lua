@@ -16,7 +16,7 @@ return {
     },
     config = function()
         require("mason").setup()
-        require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "ts_ls", "gopls", "pyright", "eslint" } })
+        require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "ts_ls", "gopls", "pyright", "eslint", "clangd" } })
         require("mason-nvim-dap").setup({ ensure_installed = { "js", "delve" } })
 
         vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
@@ -81,21 +81,6 @@ return {
             }
         })
 
-        lspconfig.gopls.setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = {
-                gopls = {
-                    symbolScope = "workspace",
-                }
-            },
-        })
-
-        lspconfig.pyright.setup({
-            capabilities = capabilities,
-            on_attach = on_attach
-        })
-
         lspconfig.ts_ls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
@@ -113,6 +98,27 @@ return {
                     command = "EslintFixAll",
                 })
             end,
+        })
+
+        lspconfig.gopls.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+                gopls = {
+                    symbolScope = "workspace",
+                }
+            },
+        })
+
+        lspconfig.pyright.setup({
+            capabilities = capabilities,
+            on_attach = on_attach
+        })
+
+
+        lspconfig.clangd.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
         })
     end,
     event = { "BufReadPost", "BufNewFile" },
