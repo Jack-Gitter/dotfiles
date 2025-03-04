@@ -5,11 +5,17 @@ return {
     },
     opts = {
         actions = { files = {} },
+        winopts = {
+            preview = {
+                layout = "vertical",
+                vertical = "down:65%"
+            }
+        },
         files = {
             previewer = false,
         },
         grep = {
-            no_ignore = false
+            no_ignore = false,
         }
     },
     config = function(_, opts)
