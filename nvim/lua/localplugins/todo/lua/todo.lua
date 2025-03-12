@@ -8,8 +8,9 @@ M.state = {
 local write_buffer = function(filename)
     local lines = vim.api.nvim_buf_get_lines(M.state.buf, 0, -1, false)
 
-    local cwd = vim.fn.getcwd()
-    local full_path = cwd .. "../" .. filename
+    local full_path = vim.env.XDG_CONFIG_HOME .. '/nvim/lua/localplugins/todo/' .. filename
+    vim.print(full_path)
+
     local file = io.open(full_path, "w")
 
     if file then
@@ -21,8 +22,8 @@ local write_buffer = function(filename)
 end
 
 local read_file = function(filename)
-    local cwd = vim.fn.getcwd()
-    local full_path = cwd .. "../" .. filename
+    local full_path = vim.env.XDG_CONFIG_HOME .. '/nvim/lua/localplugins/todo/' .. filename
+    vim.print(full_path)
     local file = io.open(full_path, "r")
     if file then
         local file_contents = file:read("*a")
@@ -33,7 +34,6 @@ end
 
 local open_popup = function(filename)
     M.state.buf = vim.api.nvim_create_buf(false, false)
-
 
     local opts = {
         relative = 'editor',
@@ -71,7 +71,7 @@ local window_exists = function(window_id)
 end
 
 local toggle_popup = function(filename)
-    if M.state.win ~= -1 and M.window_exists(M.state.win) then
+    if M.state.win ~= -1 and window_exists(M.state.win) then
         close_existing_popup(filename)
     else
         open_popup(filename)

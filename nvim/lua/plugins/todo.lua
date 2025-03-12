@@ -1,4 +1,7 @@
 return {
-    --dir = vim.fn.getcwd() .. '../localplugins/todo/lua/todo.lua',
-    --dev = true
+    "todo",
+    name = "todo",
+    dir = vim.fn.getcwd() .. '/lua/localplugins/todo',
+    dev = true,
+    opts = {}
 }
