@@ -1,12 +1,12 @@
 local M = {}
 
-M.state = {
+local state = {
     buf = -1,
     win = -1
 }
 
 local open_popup = function(filename)
-    M.state.buf = vim.api.nvim_create_buf(false, false)
+    state.buf = vim.api.nvim_create_buf(false, false)
     local full_path = vim.env.XDG_CONFIG_HOME .. '/nvim/lua/localplugins/todo/' .. filename
     local opts = {
         relative = 'editor',
@@ -18,13 +18,13 @@ local open_popup = function(filename)
         border = 'single',
     }
 
-    M.state.win = vim.api.nvim_open_win(M.state.buf, true, opts)
+    state.win = vim.api.nvim_open_win(state.buf, true, opts)
     vim.cmd("edit" .. full_path)
 end
 
-local close_existing_popup = function()
-    vim.api.nvim_win_close(M.state.win, true)
-    vim.api.nvim_buf_delete(M.state.buf, { force = true })
+local close_popup = function()
+    vim.api.nvim_win_close(state.win, true)
+    vim.api.nvim_buf_delete(state.buf, { force = true })
 end
 
 local window_exists = function(window_id)
@@ -38,8 +38,8 @@ local window_exists = function(window_id)
 end
 
 local toggle_popup = function(filename)
-    if window_exists(M.state.win) then
-        close_existing_popup()
+    if window_exists(state.win) then
+        close_popup()
     else
         open_popup(filename)
     end
