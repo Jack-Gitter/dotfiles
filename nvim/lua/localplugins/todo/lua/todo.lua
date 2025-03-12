@@ -21,6 +21,8 @@ local open_popup = function()
         row = math.floor((vim.o.lines - 20) / 2),
         style = 'minimal',
         border = 'single',
+        title = 'TODO',
+        title_pos = 'center'
     }
 
     state.win = vim.api.nvim_open_win(state.buf, true, win_opts)
