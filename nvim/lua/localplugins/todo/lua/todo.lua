@@ -1,14 +1,19 @@
 local M = {}
 
+local opts = {
+    fullpath = vim.env.XDG_CONFIG_HOME .. '/nvim/lua/localplugins/todo/todo.md',
+    keymap = '<leader>td',
+}
+
 local state = {
     buf = -1,
     win = -1
 }
 
-local open_popup = function(filename)
+local open_popup = function()
     state.buf = vim.api.nvim_create_buf(false, false)
-    local full_path = vim.env.XDG_CONFIG_HOME .. '/nvim/lua/localplugins/todo/' .. filename
-    local opts = {
+
+    local win_opts = {
         relative = 'editor',
         width = 80,
         height = 20,
@@ -18,8 +23,8 @@ local open_popup = function(filename)
         border = 'single',
     }
 
-    state.win = vim.api.nvim_open_win(state.buf, true, opts)
-    vim.cmd("edit" .. full_path)
+    state.win = vim.api.nvim_open_win(state.buf, true, win_opts)
+    vim.cmd("edit" .. opts.fullpath)
 end
 
 local close_popup = function()
@@ -37,16 +42,17 @@ local window_exists = function(window_id)
     return false
 end
 
-local toggle_popup = function(filename)
+local toggle_popup = function()
     if window_exists(state.win) then
         close_popup()
     else
-        open_popup(filename)
+        open_popup()
     end
 end
 
-M.setup = function()
-    vim.keymap.set("n", "<leader>td", function() toggle_popup("todo.md") end)
+M.setup = function(input_opts)
+    for k, v in pairs(input_opts) do opts[k] = v end
+    vim.keymap.set("n", opts.keymap, function() toggle_popup() end)
 end
 
 return M
