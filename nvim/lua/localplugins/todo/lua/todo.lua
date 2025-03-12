@@ -3,17 +3,7 @@ local M = {}
 local opts = {
     fullpath = vim.env.XDG_CONFIG_HOME .. '/nvim/lua/localplugins/todo/todo.md',
     keymap = '<leader>td',
-}
-
-local state = {
-    buf = -1,
-    win = -1
-}
-
-local open_popup = function()
-    state.buf = vim.api.nvim_create_buf(false, false)
-
-    local win_opts = {
+    win_opts = {
         relative = 'editor',
         width = 80,
         height = 20,
@@ -24,6 +14,17 @@ local open_popup = function()
         title = 'TODO',
         title_pos = 'center'
     }
+}
+
+local state = {
+    buf = -1,
+    win = -1
+}
+
+local open_popup = function()
+    state.buf = vim.api.nvim_create_buf(false, false)
+
+    local win_opts = opts.win_opts
 
     state.win = vim.api.nvim_open_win(state.buf, true, win_opts)
     vim.cmd("edit" .. opts.fullpath)
