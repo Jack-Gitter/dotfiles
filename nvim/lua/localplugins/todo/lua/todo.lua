@@ -25,19 +25,15 @@ end
 local close_existing_popup = function()
     vim.api.nvim_win_close(M.state.win, true)
     vim.api.nvim_buf_delete(M.state.buf, { force = true })
-    M.state.win = -1
-    M.state.buf = -1
 end
 
 local window_exists = function(window_id)
     local windows = vim.api.nvim_list_wins()
-
     for _, win_id in ipairs(windows) do
         if win_id == window_id then
             return true
         end
     end
-
     return false
 end
 
