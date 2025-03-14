@@ -11,5 +11,8 @@ return {
             end
         }
     },
-    opts = {}
+    config = function()
+        local todo = require('todo')
+        todo.setup()
+    end
 }
