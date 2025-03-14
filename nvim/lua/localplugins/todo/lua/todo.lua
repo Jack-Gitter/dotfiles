@@ -1,7 +1,7 @@
 local M = {}
 
 local opts = {
-    fullpath = vim.fn.stdpath("data") .. 'lazy/todo/todo.md',
+    fullpath = vim.env.XDG_CONFIG_HOME .. '/nvim/lua/localplugins/todo/todo.md',
     keymap = '<leader>td',
     win_opts = {
         relative = 'editor',
