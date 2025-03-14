@@ -1,7 +1,7 @@
 local M = {}
 
 local opts = {
-    fullpath = vim.fn.expand("%:p") .. '/../todo.md',
+    fullpath = vim.fn.stdpath("data") .. 'lazy/todo/todo.md',
     keymap = '<leader>td',
     win_opts = {
         relative = 'editor',
