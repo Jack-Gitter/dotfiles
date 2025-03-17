@@ -6,7 +6,7 @@ return {
     opts = {
         theme = "dracula-nvim",
         sections = {
-            lualine_c = {},
+            lualine_c = { 'filename' },
             lualine_x = {},
             lualine_y = {},
             lualine_z = { 'location' }
