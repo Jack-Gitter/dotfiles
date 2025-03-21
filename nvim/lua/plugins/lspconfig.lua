@@ -13,6 +13,9 @@ return {
         {
             "jay-babu/mason-nvim-dap.nvim"
         },
+        {
+            "artemave/workspace-diagnostics.nvim"
+        }
     },
     config = function()
         require("mason").setup()
@@ -43,8 +46,13 @@ return {
                 vim.keymap.set("n", "<leader>ho", vim.lsp.buf.hover, { buffer = true })
             end
 
+
             if client.supports_method("textDocument/diagnostics") then
                 vim.keymap.set("n", "<leader>di", vim.diagnostic.open_float)
+            end
+
+            if ft == "javascript" or ft == "typescript" then
+                require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
             end
 
             if client.supports_method("textDocument/formatting") and ft ~= "python" and ft ~= "javascript" and ft ~= "typescript" then
