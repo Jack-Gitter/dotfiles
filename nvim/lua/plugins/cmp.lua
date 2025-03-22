@@ -21,14 +21,29 @@ return {
         sources = {
             { name = "nvim_lsp" },
             { name = 'luasnip' },
-            { name = 'nvim_lua' },
-            { name = 'render-markdown' },
-            { name = 'vim-dadbod-completion' },
         },
     },
     config = function(_, opts)
         local cmp = require("cmp")
 
+        cmp.setup.filetype({ "sql" }, {
+            sources = {
+                { name = 'vim-dadbod-completion' },
+                { name = 'buffer' },
+            }
+        })
+        cmp.setup.filetype({ "lua" }, {
+            sources = {
+                { name = 'nvim_lua' },
+                { name = 'buffer' },
+            }
+        })
+        cmp.setup.filetype({ "markdown" }, {
+            sources = {
+                { name = 'render-markdown' },
+                { name = 'buffer' },
+            }
+        })
 
         opts.mapping = {
             ["<c-j>"] = function() cmp.select_next_item() end,
