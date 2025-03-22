@@ -23,6 +23,7 @@ return {
             { name = 'luasnip' },
             { name = 'nvim_lua' },
             { name = 'render-markdown' },
+            { name = 'vim-dadbod-completion' },
         },
     },
     config = function(_, opts)
