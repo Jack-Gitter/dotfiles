@@ -15,5 +15,9 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 set -o vi
 
 bindkey -v '^?' backward-delete-char
+# VI-mode
+bindkey -v
 
+# 10ms for key sequences
+KEYTIMEOUT=1
 
