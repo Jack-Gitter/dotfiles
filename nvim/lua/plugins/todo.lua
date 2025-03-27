@@ -11,8 +11,11 @@ return {
             end
         }
     },
-    config = function()
+    opts = {
+        fullpath = vim.env.HOME .. '/.config/todo.md',
+    },
+    config = function(_, opts)
         local todo = require('todo')
-        todo.setup()
+        todo.setup(opts)
     end
 }
