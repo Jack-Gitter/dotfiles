@@ -72,7 +72,7 @@ return {
             end
 
             if client.supports_method("textDocument/rename") then
-                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename())
+                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
             end
         end
 
