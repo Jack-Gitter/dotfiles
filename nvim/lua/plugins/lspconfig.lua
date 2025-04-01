@@ -70,6 +70,10 @@ return {
             if client.supports_method("textDocument/signatureHelp") then
                 vim.keymap.set("i", "<c-;>", vim.lsp.buf.signature_help)
             end
+
+            if client.supports_method("textDocument/rename") then
+                vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename())
+            end
         end
 
         lspconfig.lua_ls.setup({
