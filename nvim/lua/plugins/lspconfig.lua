@@ -22,7 +22,7 @@ return {
         require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "ts_ls", "gopls", "pyright", "eslint", "clangd" } })
         require("mason-nvim-dap").setup({ ensure_installed = { "js", "delve" } })
 
-        vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#3dabcc", fg = "white" })
+        vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = '#5a4480', fg = 'white' })
 
         local lspconfig = require("lspconfig")
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
