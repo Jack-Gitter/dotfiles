@@ -5,7 +5,7 @@ return {
             "williamboman/mason.nvim",
         },
         {
-            "hrsh7th/cmp-nvim-lsp",
+            'saghen/blink.cmp'
         },
         {
             "williamboman/mason-lspconfig.nvim"
@@ -25,7 +25,7 @@ return {
         vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = '#5a4480', fg = 'white' })
 
         local lspconfig = require("lspconfig")
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        local capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
 
         local on_attach = function(client, bufnr)
             local ft = vim.bo.filetype
@@ -67,8 +67,8 @@ return {
         end
 
         lspconfig.lua_ls.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
+            capabilities = capabilities,
             settings = {
                 Lua = {
                     workspace = {
@@ -84,8 +84,8 @@ return {
         })
 
         lspconfig.ts_ls.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
+            capabilities = capabilities,
             settings = {
                 completions = {
                     completeFunctionCalls = true
@@ -94,6 +94,7 @@ return {
         })
 
         lspconfig.eslint.setup({
+            capabilities = capabilities,
             on_attach = function(_, bufnr)
                 vim.api.nvim_create_autocmd("BufWritePre", {
                     buffer = bufnr,
@@ -103,8 +104,8 @@ return {
         })
 
         lspconfig.gopls.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
+            capabilities = capabilities,
             settings = {
                 gopls = {
                     symbolScope = "workspace",
