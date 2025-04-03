@@ -1,6 +1,9 @@
 return {
     'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets' },
+    dependencies = {
+        { 'L3MON4D3/LuaSnip',            version = 'v2.*' },
+        { "rafamadriz/friendly-snippets" }
+    },
     version = '1.*',
     opts = {
         -- All presets have the following mappings:
@@ -13,9 +16,13 @@ return {
         appearance = {
             nerd_font_variant = 'mono'
         },
+        snippets = { preset = 'luasnip' },
 
         -- (Default) Only show the documentation popup when manually triggered
-        completion = { documentation = { auto_show = false } },
+        completion = {
+            documentation = { auto_show = false, window = { border = 'single' } },
+            menu = { border = 'single' }
+        },
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
@@ -23,3 +30,6 @@ return {
     },
     opts_extend = { "sources.default" }
 }
+
+
+-- needs are snippets, and vim dadbod

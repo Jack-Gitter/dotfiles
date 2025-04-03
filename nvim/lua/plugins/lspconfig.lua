@@ -25,7 +25,7 @@ return {
         vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = '#5a4480', fg = 'white' })
 
         local lspconfig = require("lspconfig")
-        local capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+        local capabilities = require('blink.cmp').get_lsp_capabilities()
 
         local on_attach = function(client, bufnr)
             local ft = vim.bo.filetype
