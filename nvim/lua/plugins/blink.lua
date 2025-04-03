@@ -32,6 +32,3 @@ return {
     },
     opts_extend = { "sources.default" }
 }
-
-
--- and vim dadbod
