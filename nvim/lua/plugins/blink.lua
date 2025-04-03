@@ -6,19 +6,17 @@ return {
     },
     version = '1.*',
     opts = {
-        -- All presets have the following mappings:
-        -- C-space: Open menu or open docs if already open
-        -- C-n/C-p or Up/Down: Select next/previous item
-        -- C-e: Hide menu
-        -- C-k: Toggle signature help (if signature.enabled = true)
-        -- See :h blink-cmp-config-keymap for defining your own keymap
-        keymap = { preset = 'default' },
+        keymap = {
+            preset = 'default',
+            ['<c-k>'] = { 'select_prev', 'fallback' },
+            ['<c-j>'] = { 'select_next', 'fallback' },
+            ['<c-cr>'] = { 'accept', 'fallback' },
+            ['<c-;>'] = { 'show_documentation', 'fallback' },
+        },
         appearance = {
             nerd_font_variant = 'mono'
         },
         snippets = { preset = 'luasnip' },
-
-        -- (Default) Only show the documentation popup when manually triggered
         completion = {
             documentation = { auto_show = false, window = { border = 'single' } },
             menu = { border = 'single' }
@@ -32,4 +30,4 @@ return {
 }
 
 
--- needs are snippets, and vim dadbod
+-- and vim dadbod
