@@ -22,19 +22,6 @@ return {
         require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "ts_ls", "gopls", "pyright", "eslint", "clangd" } })
         require("mason-nvim-dap").setup({ ensure_installed = { "js", "delve" } })
 
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-            vim.lsp.handlers.hover, {
-                border = "single",
-            }
-        )
-
-        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-            vim.lsp.handlers.signature_help, {
-                border = "single"
-            }
-        )
-
-
         vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#3dabcc", fg = "white" })
 
         local lspconfig = require("lspconfig")
@@ -44,9 +31,9 @@ return {
             local ft = vim.bo.filetype
 
             if client.supports_method("textDocument/hover") then
-                vim.keymap.set("n", "<leader>ho", vim.lsp.buf.hover, { buffer = true })
+                vim.keymap.set("n", "<leader>ho", function() vim.lsp.buf.hover({ border = "single" }) end,
+                    { buffer = true })
             end
-
 
             if client.supports_method("textDocument/diagnostics") then
                 vim.keymap.set("n", "<leader>di", vim.diagnostic.open_float)
@@ -55,6 +42,7 @@ return {
             if ft == "javascript" or ft == "typescript" then
                 require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
             end
+
 
             if client.supports_method("textDocument/formatting") and ft ~= "python" and ft ~= "javascript" and ft ~= "typescript" then
                 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -69,8 +57,9 @@ return {
             end
 
             if client.supports_method("textDocument/signatureHelp") then
-                vim.keymap.set("i", "<c-;>", vim.lsp.buf.signature_help)
+                vim.keymap.set("i", "<c-;>", function() vim.lsp.buf.signature_help({ border = "single", title = "" }) end)
             end
+
 
             if client.supports_method("textDocument/rename") then
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
