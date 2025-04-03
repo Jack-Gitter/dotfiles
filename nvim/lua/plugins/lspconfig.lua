@@ -22,17 +22,11 @@ return {
         require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "ts_ls", "gopls", "pyright", "eslint", "clangd" } })
         require("mason-nvim-dap").setup({ ensure_installed = { "js", "delve" } })
 
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-            vim.lsp.handlers.hover, {
-                border = "single",
-            }
-        )
 
-        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-            vim.lsp.handlers.signature_help, {
-                border = "single"
-            }
-        )
+        local handlers = {
+            ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single", }),
+            ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
+        }
 
         vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = "#3dabcc", fg = "white" })
 
@@ -79,6 +73,7 @@ return {
         lspconfig.lua_ls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
             settings = {
                 Lua = {
                     workspace = {
@@ -96,6 +91,7 @@ return {
         lspconfig.ts_ls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
             settings = {
                 completions = {
                     completeFunctionCalls = true
@@ -115,6 +111,7 @@ return {
         lspconfig.gopls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
             settings = {
                 gopls = {
                     symbolScope = "workspace",
@@ -125,12 +122,14 @@ return {
         lspconfig.pyright.setup({
             capabilities = capabilities,
             on_attach = on_attach
+            handlers = handlers,
         })
 
 
         lspconfig.clangd.setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            handlers = handlers,
         })
     end,
     event = { "BufReadPost", "BufNewFile" },
