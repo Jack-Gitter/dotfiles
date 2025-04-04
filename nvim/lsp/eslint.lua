@@ -62,6 +62,41 @@ local function get_eslint_closest_dir()
 
     return eslint_node_modules:match '(.*)/node_modules/eslint'
 end
+local on_attach = function(client, _)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
+        callback = function()
+            vim.lsp.buf.format({
+                async = false,
+                filter = function(c)
+                    return c.name == "eslint"
+                end
+            })
+        end,
+    })
+
+    local root_dir = client.root_dir
+
+    if root_dir == nil then
+        return
+    end
+
+    if
+        vim.fn.filereadable(root_dir .. '/eslint.config.js') == 1
+        or vim.fn.filereadable(root_dir .. '/eslint.config.mjs') == 1
+        or vim.fn.filereadable(root_dir .. '/eslint.config.cjs') == 1
+        or vim.fn.filereadable(root_dir .. '/eslint.config.ts') == 1
+        or vim.fn.filereadable(root_dir .. '/eslint.config.mts') == 1
+        or vim.fn.filereadable(root_dir .. '/eslint.config.cts') == 1
+    then
+        client.settings.experimental.useFlatConfig = true
+    end
+    local pnp_cjs = root_dir .. '/.pnp.cjs'
+    local pnp_js = root_dir .. '/.pnp.js'
+    if vim.loop.fs_stat(pnp_cjs) or vim.loop.fs_stat(pnp_js) then
+        client.cmd = vim.list_extend({ 'yarn', 'exec' }, client.cmd)
+    end
+end
 
 return {
     cmd = { 'vscode-eslint-language-server', '--stdio' },
@@ -77,42 +112,9 @@ return {
         'astro',
     },
     root_markers = root_file,
-    on_attach = function(client, _)
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
-            callback = function()
-                vim.lsp.buf.format({
-                    async = false,
-                    filter = function(c)
-                        return c.name == "eslint"
-                    end
-                })
-            end,
-        })
-
-        local root_dir = client.root_dir
-
-        if root_dir == nil then
-            return
-        end
-
-        if
-            vim.fn.filereadable(root_dir .. '/eslint.config.js') == 1
-            or vim.fn.filereadable(root_dir .. '/eslint.config.mjs') == 1
-            or vim.fn.filereadable(root_dir .. '/eslint.config.cjs') == 1
-            or vim.fn.filereadable(root_dir .. '/eslint.config.ts') == 1
-            or vim.fn.filereadable(root_dir .. '/eslint.config.mts') == 1
-            or vim.fn.filereadable(root_dir .. '/eslint.config.cts') == 1
-        then
-            client.settings.experimental.useFlatConfig = true
-        end
-        local pnp_cjs = root_dir .. '/.pnp.cjs'
-        local pnp_js = root_dir .. '/.pnp.js'
-        if vim.loop.fs_stat(pnp_cjs) or vim.loop.fs_stat(pnp_js) then
-            client.cmd = vim.list_extend({ 'yarn', 'exec' }, client.cmd)
-        end
-    end,
+    on_attach = on_attach,
     settings = {
+        format = true,
         validate = 'on',
         packageManager = nil,
         workspaceFolder = {
@@ -122,6 +124,10 @@ return {
         useESLintClass = false,
         experimental = {
             useFlatConfig = false,
+        },
+        codeActionOnSave = {
+            enable = false,
+            mode = 'all',
         },
         quiet = false,
         onIgnoredFiles = 'off',
