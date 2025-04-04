@@ -67,7 +67,7 @@ return {
     cmd = { 'pyright-langserver', '--stdio' },
     on_attach = on_attach,
     filetypes = { 'python' },
-    root_dir = root_markers,
+    root_markers = root_markers,
     single_file_support = true,
     settings = {
         python = {
