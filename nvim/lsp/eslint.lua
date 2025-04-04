@@ -78,6 +78,18 @@ return {
     },
     root_markers = root_file,
     on_attach = function(client, _)
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
+            callback = function()
+                vim.lsp.buf.format({
+                    async = false,
+                    filter = function(c)
+                        return c.name == "eslint"
+                    end
+                })
+            end,
+        })
+
         local root_dir = client.root_dir
 
         if root_dir == nil then
@@ -111,11 +123,6 @@ return {
         experimental = {
             useFlatConfig = false,
         },
-        codeActionOnSave = {
-            enable = true,
-            mode = 'all',
-        },
-        format = true,
         quiet = false,
         onIgnoredFiles = 'off',
         rulesCustomizations = {},
