@@ -111,7 +111,7 @@ return {
         experimental = {
             useFlatConfig = false,
         },
-        codeActionsOnSave = {
+        codeActionOnSave = {
             enable = true,
             mode = 'all',
         },
