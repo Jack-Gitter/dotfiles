@@ -19,7 +19,7 @@ return {
     },
     config = function()
         require("mason").setup()
-        require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "ts_ls", "gopls", "pyright", "eslint", "clangd" } })
+        require("mason-lspconfig").setup({ ensure_installed = { "ts_ls", "lua_ls", "gopls", "pyright", "eslint", } })
         require("mason-nvim-dap").setup({ ensure_installed = { "js", "delve" } })
 
         vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = '#5a4480', fg = 'white' })
@@ -66,42 +66,6 @@ return {
             end
         end
 
-        lspconfig.lua_ls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-                Lua = {
-                    workspace = {
-                        checkThirdParty = "Disable",
-                        ignoreDir = { "~/.local/" },
-                    },
-                    diagnostics = {
-                        libraryFiles = "Disable",
-                        globals = { 'vim' }
-                    }
-                }
-            }
-        })
-
-        lspconfig.ts_ls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-                completions = {
-                    completeFunctionCalls = true
-                }
-            },
-        })
-
-        lspconfig.eslint.setup({
-            capabilities = capabilities,
-            on_attach = function(_, bufnr)
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                    buffer = bufnr,
-                    command = "EslintFixAll",
-                })
-            end,
-        })
 
         lspconfig.gopls.setup({
             on_attach = on_attach,
@@ -111,17 +75,6 @@ return {
                     symbolScope = "workspace",
                 }
             },
-        })
-
-        lspconfig.pyright.setup({
-            capabilities = capabilities,
-            on_attach = on_attach
-        })
-
-
-        lspconfig.clangd.setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
         })
     end,
     event = { "BufReadPost", "BufNewFile" },
