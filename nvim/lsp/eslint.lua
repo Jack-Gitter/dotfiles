@@ -49,7 +49,7 @@ local function get_eslint_closest_dir()
     return eslint_node_modules:match '(.*)/node_modules/eslint'
 end
 
-local root_file = {
+local root_markers = {
     '.eslintrc',
     '.eslintrc.js',
     '.eslintrc.cjs',
@@ -85,10 +85,7 @@ return {
             description = 'Fix all eslint problems for this buffer',
         },
     },
-    root_markers = function(fname)
-        root_file = utils.insert_package_json(root_file, 'eslintConfig', fname)
-        return utils.root_pattern(unpack(root_file))(fname)
-    end,
+    root_markers = root_markers,
     on_attach = function(_, bufnr)
         vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = bufnr,

@@ -23,6 +23,10 @@ local on_attach = function(client, bufnr)
     end
 end
 
+local root_markers = {
+    'tsconfig.json', 'jsconfig.json', 'package.json', '.git'
+}
+
 return {
     init_options = { hostInfo = 'neovim' },
     on_attach = on_attach,
@@ -35,7 +39,7 @@ return {
         'typescriptreact',
         'typescript.tsx',
     },
-    root_markers = utils.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git'),
+    root_markers = root_markers,
     single_file_support = true,
     settings = {
         completions = {
