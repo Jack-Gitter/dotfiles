@@ -6,6 +6,7 @@ local function fix_all(opts)
 
     local eslint_lsp_client = util.get_active_client_by_name(opts.bufnr, 'eslint')
     if eslint_lsp_client == nil then
+        vim.print("we return!!!")
         return
     end
 
@@ -76,9 +77,31 @@ return {
         'astro',
     },
     root_markers = root_file,
+    on_attach = function(client, _)
+        local root_dir = client.settings.workspaceFolder.uri
+        if
+            vim.fn.filereadable(root_dir .. '/eslint.config.js') == 1
+            or vim.fn.filereadable(root_dir .. '/eslint.config.mjs') == 1
+            or vim.fn.filereadable(root_dir .. '/eslint.config.cjs') == 1
+            or vim.fn.filereadable(root_dir .. '/eslint.config.ts') == 1
+            or vim.fn.filereadable(root_dir .. '/eslint.config.mts') == 1
+            or vim.fn.filereadable(root_dir .. '/eslint.config.cts') == 1
+        then
+            client.settings.experimental.useFlatConfig = true
+        end
+        local pnp_cjs = root_dir .. '/.pnp.cjs'
+        local pnp_js = root_dir .. '/.pnp.js'
+        if vim.loop.fs_stat(pnp_cjs) or vim.loop.fs_stat(pnp_js) then
+            client.cmd = vim.list_extend({ 'yarn', 'exec' }, client.cmd)
+        end
+    end,
     settings = {
         validate = 'on',
         packageManager = nil,
+        workspaceFolder = {
+            uri = get_eslint_closest_dir(),
+            name = vim.fn.fnamemodify(get_eslint_closest_dir(), ':t'),
+        },
         useESLintClass = false,
         experimental = {
             useFlatConfig = false,
@@ -107,54 +130,10 @@ return {
             },
         },
     },
-    on_attach = function(config, new_root_dir)
-        new_root_dir = get_eslint_closest_dir() or new_root_dir
-        config.settings.workspaceFolder = {
-            uri = new_root_dir,
-            name = vim.fn.fnamemodify(new_root_dir, ':t'),
-        }
-        if
-            vim.fn.filereadable(new_root_dir .. '/eslint.config.js') == 1
-            or vim.fn.filereadable(new_root_dir .. '/eslint.config.mjs') == 1
-            or vim.fn.filereadable(new_root_dir .. '/eslint.config.cjs') == 1
-            or vim.fn.filereadable(new_root_dir .. '/eslint.config.ts') == 1
-            or vim.fn.filereadable(new_root_dir .. '/eslint.config.mts') == 1
-            or vim.fn.filereadable(new_root_dir .. '/eslint.config.cts') == 1
-        then
-            config.settings.experimental.useFlatConfig = true
-        end
-        local pnp_cjs = new_root_dir .. '/.pnp.cjs'
-        local pnp_js = new_root_dir .. '/.pnp.js'
-        if vim.loop.fs_stat(pnp_cjs) or vim.loop.fs_stat(pnp_js) then
-            config.cmd = vim.list_extend({ 'yarn', 'exec' }, config.cmd)
-        end
-    end,
-    handlers = {
-        ['eslint/openDoc'] = function(_, result)
-            if result then
-                vim.ui.open(result.url)
-            end
-            return {}
-        end,
-        ['eslint/confirmESLintExecution'] = function(_, result)
-            if not result then
-                return
-            end
-            return 4 -- approved
-        end,
-        ['eslint/probeFailed'] = function()
-            vim.notify('[lspconfig] ESLint probe failed.', vim.log.levels.WARN)
-            return {}
-        end,
-        ['eslint/noLibrary'] = function()
-            vim.notify('[lspconfig] Unable to find ESLint library.', vim.log.levels.WARN)
-            return {}
-        end,
-    },
     commands = {
         EslintFixAll = {
             function()
-                fix_all { sync = true, bufnr = 0 }
+                fix_all({ sync = true, bufnr = 0 })
             end,
             description = 'Fix all eslint problems for this buffer',
         },
