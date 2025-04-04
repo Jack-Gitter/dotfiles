@@ -9,3 +9,6 @@ require("config.diagnostics")
 
 -------- Autocmds --------
 require("config.autocmds")
+
+-------- Util Functions --------
+require("utils.utils")
