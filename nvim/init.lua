@@ -12,3 +12,6 @@ require("config.autocmds")
 
 -------- Util Functions --------
 require("utils.utils")
+
+-------- Init LSP --------
+require("lsp.lsp")
