@@ -3,6 +3,7 @@ local utils = require("utils.utils")
 local on_attach = function(client, bufnr)
     require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
 
+    vim.print("here!")
     if client.supports_method("textDocument/hover") then
         vim.keymap.set("n", "<leader>ho", function() vim.lsp.buf.hover({ border = "single" }) end,
             { buffer = true })
@@ -24,7 +25,7 @@ end
 
 return {
     init_options = { hostInfo = 'neovim' },
-    on_attaach = on_attach,
+    on_attach = on_attach,
     cmd = { 'typescript-language-server', '--stdio' },
     filetypes = {
         'javascript',

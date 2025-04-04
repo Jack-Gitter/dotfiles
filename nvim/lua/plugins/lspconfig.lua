@@ -19,7 +19,7 @@ return {
     },
     config = function()
         require("mason").setup()
-        require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "ts_ls", "gopls", "pyright", "eslint", "clangd" } })
+        require("mason-lspconfig").setup({ ensure_installed = { "lua_ls", "gopls", "pyright", "eslint", "clangd" } })
         require("mason-nvim-dap").setup({ ensure_installed = { "js", "delve" } })
 
         vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = '#5a4480', fg = 'white' })
@@ -81,17 +81,6 @@ return {
                     }
                 }
             }
-        })
-
-
-        lspconfig.eslint.setup({
-            capabilities = capabilities,
-            on_attach = function(_, bufnr)
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                    buffer = bufnr,
-                    command = "EslintFixAll",
-                })
-            end,
         })
 
         lspconfig.gopls.setup({
