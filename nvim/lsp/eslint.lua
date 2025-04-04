@@ -6,7 +6,6 @@ local function fix_all(opts)
 
     local eslint_lsp_client = util.get_active_client_by_name(opts.bufnr, 'eslint')
     if eslint_lsp_client == nil then
-        vim.print("we return!!!")
         return
     end
 
@@ -126,7 +125,7 @@ return {
             useFlatConfig = false,
         },
         codeActionOnSave = {
-            enable = false,
+            enable = true,
             mode = 'all',
         },
         quiet = false,
