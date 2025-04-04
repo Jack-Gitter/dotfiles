@@ -83,15 +83,6 @@ return {
             }
         })
 
-        lspconfig.ts_ls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-                completions = {
-                    completeFunctionCalls = true
-                }
-            },
-        })
 
         lspconfig.eslint.setup({
             capabilities = capabilities,
