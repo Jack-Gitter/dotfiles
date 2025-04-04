@@ -36,4 +36,9 @@ return {
     },
     root_markers = utils.root_pattern('tsconfig.json', 'jsconfig.json', 'package.json', '.git'),
     single_file_support = true,
+    settings = {
+        completions = {
+            completeFunctionCalls = true
+        }
+    },
 }
