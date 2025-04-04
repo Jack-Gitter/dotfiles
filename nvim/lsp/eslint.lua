@@ -65,29 +65,29 @@ local root_markers = {
 }
 
 return {
-    cmd = { 'vscode-eslint-language-server', '--stdio' },
-    filetypes = {
-        'javascript',
-        'javascriptreact',
-        'javascript.jsx',
-        'typescript',
-        'typescriptreact',
-        'typescript.tsx',
-        'vue',
-        'svelte',
-        'astro',
-    },
-    root_markers = root_markers,
-    settings = {
-        validate = 'on',
-        format = true,
-        quiet = false,
-        onIgnoredFiles = 'off',
-        run = 'onType',
-        problems = {
-            shortenToSingleLine = false,
-        },
-        nodePath = '',
-        workingDirectories = { { mode = 'auto' } },
-    },
+    -- cmd = { 'vscode-eslint-language-server', '--stdio' },
+    -- filetypes = {
+    --     'javascript',
+    --     'javascriptreact',
+    --     'javascript.jsx',
+    --     'typescript',
+    --     'typescriptreact',
+    --     'typescript.tsx',
+    --     'vue',
+    --     'svelte',
+    --     'astro',
+    -- },
+    -- root_markers = root_markers,
+    -- settings = {
+    --     validate = 'on',
+    --     format = true,
+    --     quiet = false,
+    --     onIgnoredFiles = 'off',
+    --     run = 'onType',
+    --     problems = {
+    --         shortenToSingleLine = false,
+    --     },
+    --     nodePath = '',
+    --     workingDirectories = { { mode = 'location' } },
+    -- },
 }

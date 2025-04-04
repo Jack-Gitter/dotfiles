@@ -66,22 +66,6 @@ return {
             end
         end
 
-        lspconfig.lua_ls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-                Lua = {
-                    workspace = {
-                        checkThirdParty = "Disable",
-                        ignoreDir = { "~/.local/" },
-                    },
-                    diagnostics = {
-                        libraryFiles = "Disable",
-                        globals = { 'vim' }
-                    }
-                }
-            }
-        })
 
         lspconfig.gopls.setup({
             on_attach = on_attach,
