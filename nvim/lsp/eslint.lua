@@ -78,7 +78,12 @@ return {
     },
     root_markers = root_file,
     on_attach = function(client, _)
-        local root_dir = client.settings.workspaceFolder.uri
+        local root_dir = client.root_dir
+
+        if root_dir == nil then
+            return
+        end
+
         if
             vim.fn.filereadable(root_dir .. '/eslint.config.js') == 1
             or vim.fn.filereadable(root_dir .. '/eslint.config.mjs') == 1
@@ -107,7 +112,7 @@ return {
             useFlatConfig = false,
         },
         codeActionsOnSave = {
-            enable = false,
+            enable = true,
             mode = 'all',
         },
         format = true,
