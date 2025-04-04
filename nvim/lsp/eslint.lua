@@ -77,6 +77,14 @@ return {
         'svelte',
         'astro',
     },
+    commands = {
+        EslintFixAll = {
+            function()
+                fix_all { sync = true, bufnr = 0 }
+            end,
+            description = 'Fix all eslint problems for this buffer',
+        },
+    },
     root_markers = function(fname)
         root_file = utils.insert_package_json(root_file, 'eslintConfig', fname)
         return utils.root_pattern(unpack(root_file))(fname)
@@ -118,28 +126,6 @@ return {
             },
         },
     },
-    on_new_config = function(config, new_root_dir)
-        new_root_dir = get_eslint_closest_dir() or new_root_dir
-        config.settings.workspaceFolder = {
-            uri = new_root_dir,
-            name = vim.fn.fnamemodify(new_root_dir, ':t'),
-        }
-        if
-            vim.fn.filereadable(new_root_dir .. '/eslint.config.js') == 1
-            or vim.fn.filereadable(new_root_dir .. '/eslint.config.mjs') == 1
-            or vim.fn.filereadable(new_root_dir .. '/eslint.config.cjs') == 1
-            or vim.fn.filereadable(new_root_dir .. '/eslint.config.ts') == 1
-            or vim.fn.filereadable(new_root_dir .. '/eslint.config.mts') == 1
-            or vim.fn.filereadable(new_root_dir .. '/eslint.config.cts') == 1
-        then
-            config.settings.experimental.useFlatConfig = true
-        end
-        local pnp_cjs = new_root_dir .. '/.pnp.cjs'
-        local pnp_js = new_root_dir .. '/.pnp.js'
-        if vim.loop.fs_stat(pnp_cjs) or vim.loop.fs_stat(pnp_js) then
-            config.cmd = vim.list_extend({ 'yarn', 'exec' }, config.cmd)
-        end
-    end,
     handlers = {
         ['eslint/openDoc'] = function(_, result)
             if result then
@@ -161,13 +147,5 @@ return {
             vim.notify('[lspconfig] Unable to find ESLint library.', vim.log.levels.WARN)
             return {}
         end,
-    },
-    commands = {
-        EslintFixAll = {
-            function()
-                fix_all { sync = true, bufnr = 0 }
-            end,
-            description = 'Fix all eslint problems for this buffer',
-        },
     },
 }
