@@ -11,7 +11,9 @@ return {
         }
     },
     config = function(_, opts)
-        local snacks = require("snacks").setup(opts)
+        local snacks = require("snacks")
+        snacks.setup(opts)
+
         local ws = function()
             local folders = vim.lsp.buf.list_workspace_folders()
             if next(folders) ~= nil then
