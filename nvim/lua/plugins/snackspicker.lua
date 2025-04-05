@@ -1,5 +1,8 @@
 return {
     "folke/snacks.nvim",
+    opts = {
+        ui_select = true
+    },
     config = function(_, opts)
         local snacks = require("snacks")
         snacks.setup(opts)
