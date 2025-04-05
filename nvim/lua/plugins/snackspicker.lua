@@ -22,5 +22,3 @@ return {
         vim.keymap.set("n", "<leader>wd", function() snacks.picker.diagnostics() end)
     end
 }
-
--- no file preview for smart picker
