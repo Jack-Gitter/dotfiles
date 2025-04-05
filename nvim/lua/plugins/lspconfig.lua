@@ -67,15 +67,15 @@ return {
         end
 
 
-        lspconfig.gopls.setup({
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-                gopls = {
-                    symbolScope = "workspace",
-                }
-            },
-        })
+        --     lspconfig.gopls.setup({
+        --         on_attach = on_attach,
+        --         capabilities = capabilities,
+        --         settings = {
+        --             gopls = {
+        --                 symbolScope = "workspace",
+        --             }
+        --         },
+        --     })
     end,
     event = { "BufReadPost", "BufNewFile" },
 }
