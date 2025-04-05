@@ -1,13 +1,5 @@
 --------  Lazy --------
-require("config.lazy")
+require("config")
 
---------  General --------
-require("config.general")
-
--------- Diagnostics --------
-require("config.diagnostics")
-
--------- Autocmds --------
-require("config.autocmds")
-
+-------- LSP --------
 require("lsp")
