@@ -1,15 +1,6 @@
 return {
     "folke/snacks.nvim",
-    opts = {
-        picker = {
-        },
-        list = {
-            keys = {
-                ["<c-h>"] = "toggle_hidden",
-                ["<c-i>"] = "toggle_ignored",
-            }
-        }
-    },
+    opts = {},
     config = function(_, opts)
         local snacks = require("snacks")
         snacks.setup(opts)
@@ -31,3 +22,5 @@ return {
         vim.keymap.set("n", "<leader>wd", function() snacks.picker.diagnostics() end)
     end
 }
+
+-- no file preview for smart picker
