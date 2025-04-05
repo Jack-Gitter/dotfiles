@@ -10,5 +10,4 @@ require("config.diagnostics")
 -------- Autocmds --------
 require("config.autocmds")
 
--------- Init LSP --------
-require("config.lsp")
+
