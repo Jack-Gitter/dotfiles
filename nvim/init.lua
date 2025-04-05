@@ -1,2 +1,1 @@
---------  General Configuration --------
 require("config")
