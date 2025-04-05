@@ -1,5 +1,5 @@
---------  Lazy --------
+--------  General Configuration --------
 require("config")
 
--------- LSP --------
+-------- LSP Configuration --------
 require("lsp")
