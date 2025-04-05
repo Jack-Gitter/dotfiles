@@ -9,6 +9,9 @@ end
 
 return {
     "folke/snacks.nvim",
+    opts = {
+        picker = {}
+    },
     keys = {
         { "<leader>ff", function() Snacks.picker.smart({ cwd = ws() }) end },
         { "<leader>gr", function() Snacks.picker.grep({ cwd = ws() }) end },
