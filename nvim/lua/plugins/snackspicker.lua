@@ -17,7 +17,7 @@ return {
         end
 
         vim.keymap.set("n", "<leader>ff", function() snacks.picker.smart({ cwd = ws() }) end)
-        vim.keymap.set("<leader>gr", function() snacks.picker.grep({ cwd = ws() }) end)
+        vim.keymap.set("n", "<leader>gr", function() snacks.picker.grep({ cwd = ws() }) end)
         vim.keymap.set("n", "<leader>fr", snacks.picker.lsp_references)
         vim.keymap.set("n", "<leader>gi", snacks.picker.lsp_implementations)
         vim.keymap.set("n", "<leader>gd", snacks.picker.lsp_definitions)
