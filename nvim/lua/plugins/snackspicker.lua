@@ -20,12 +20,12 @@ return {
                 return vim.fn.getcwd()
             end
         end
-        vim.keymap.set("n", "<leader>ff", function() Snacks.picker.smart({ cwd = ws() }) end)
-        vim.keymap.set("n", "<leader>gr", function() Snacks.picker.grep({ cwd = ws() }) end)
-        vim.keymap.set("n", "<leader>fr", function() Snacks.picker.lsp_references() end)
-        vim.keymap.set("n", "<leader>fr", function() Snacks.picker.lsp_implementations() end)
-        vim.keymap.set("n", "<leader>gd", function() Snacks.picker.lsp_definitions() end)
-        vim.keymap.set("n", "<leader>ws", function() Snacks.picker.lsp_workspace_symbols() end)
-        vim.keymap.set("n", "<leader>wd", function() Snacks.picker.diagnostics() end)
+        vim.keymap.set("n", "<leader>ff", function() snacks.picker.smart({ cwd = ws() }) end)
+        vim.keymap.set("n", "<leader>gr", function() snacks.picker.grep({ cwd = ws() }) end)
+        vim.keymap.set("n", "<leader>fr", function() snacks.picker.lsp_references() end)
+        vim.keymap.set("n", "<leader>fr", function() snacks.picker.lsp_implementations() end)
+        vim.keymap.set("n", "<leader>gd", function() snacks.picker.lsp_definitions() end)
+        vim.keymap.set("n", "<leader>ws", function() snacks.picker.lsp_workspace_symbols() end)
+        vim.keymap.set("n", "<leader>wd", function() snacks.picker.diagnostics() end)
     end
 }
