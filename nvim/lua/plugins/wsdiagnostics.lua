@@ -1,4 +1,4 @@
 return {
-    "artemave/workspace-diagnostics.nvim"
+    "artemave/workspace-diagnostics.nvim",
     events = { "LspAttach" }
 }
