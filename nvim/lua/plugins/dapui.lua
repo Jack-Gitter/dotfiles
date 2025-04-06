@@ -20,5 +20,6 @@ return {
             dapui.close()
         end
     end,
-    keys = { '<leader>dg', '<leader>dso', '<leader>dsi', '<leader>dst', '<leader>tb', '<leader>dr', '<leader>dcl', '<leader>??' }
+    keys = { '<leader>dg', '<leader>dso', '<leader>dsi', '<leader>dst', '<leader>tb', '<leader>dr', '<leader>dcl', '<leader>??' },
+    lazy = true
 }
