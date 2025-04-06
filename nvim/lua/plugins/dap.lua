@@ -33,7 +33,6 @@ return {
                 args = { vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js", "${port}" },
             }
         }
-
         dap.configurations.javascript = {
             {
                 type = "pwa-node",
@@ -50,7 +49,6 @@ return {
                 cwd = "${workspaceFolder}",
             }
         }
-
         dap.configurations.typescript = {
             {
                 type = "pwa-node",
@@ -70,5 +68,7 @@ return {
                 outFiles = { "${workspaceFolder}/dist/**/*.js" },
             }
         }
-    end
+    end,
+    keys = { '<leader>dg', '<leader>dso', '<leader>dsi', '<leader>dst', '<leader>tb', '<leader>dr', '<leader>dcl', '<leader>??' },
+    lazy = true
 }

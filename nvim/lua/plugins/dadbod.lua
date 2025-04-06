@@ -16,4 +16,5 @@ return {
         vim.keymap.set("n", "<leader>db", function() vim.cmd("DBUI") end)
         vim.keymap.set("n", "<leader>adb", function() vim.cmd("DBUIAddConnection") end)
     end,
+    keys = { "<leader>db", "<leader>adb" }
 }

@@ -19,5 +19,7 @@ return {
         dap.listeners.before.event_exited.dapui_config = function()
             dapui.close()
         end
-    end
+    end,
+    keys = { '<leader>dg', '<leader>dso', '<leader>dsi', '<leader>dst', '<leader>tb', '<leader>dr', '<leader>dcl', '<leader>??' },
+    lazy = true
 }

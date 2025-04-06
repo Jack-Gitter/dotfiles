@@ -17,5 +17,6 @@ return {
     config = function(_, opts)
         local todo = require('todo')
         todo.setup(opts)
-    end
+    end,
+    keys = {"<leader>td"}
 }
