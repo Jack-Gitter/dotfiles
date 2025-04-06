@@ -18,4 +18,5 @@ return {
         local todo = require('todo')
         todo.setup(opts)
     end
+    events = { "BufEnter" }
 }
