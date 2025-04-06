@@ -16,4 +16,5 @@ return {
         require("oil").setup(opts)
         vim.keymap.set("n", "<leader>o", "<cmd>Oil<cr>")
     end,
+    keys = { "<leader>o" }
 }
