@@ -70,5 +70,6 @@ return {
                 outFiles = { "${workspaceFolder}/dist/**/*.js" },
             }
         }
-    end
+    end,
+    keys = { '<leader>dg', '<leader>dso', '<leader>dsi', '<leader>dst', '<leader>tb', '<leader>dr', '<leader>dcl', '<leader>??' }
 }
