@@ -13,5 +13,4 @@ return {
         require("mason-lspconfig").setup({ ensure_installed = { "ts_ls", "lua_ls", "gopls", "pyright", "eslint", } })
         require("mason-nvim-dap").setup({ ensure_installed = { "js", "delve" } })
     end,
-    cmd = { "Mason", "MasonLog" },
 }
