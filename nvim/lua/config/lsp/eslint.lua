@@ -13,7 +13,9 @@ local function get_eslint_closest_dir()
     return eslint_node_modules:match '(.*)/node_modules/eslint'
 end
 
-local on_attach = function(client, _)
+local on_attach = function(client, bufnr)
+    require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+
     vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
         callback = function()
