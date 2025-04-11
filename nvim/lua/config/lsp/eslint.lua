@@ -14,8 +14,6 @@ local function get_eslint_closest_dir()
 end
 
 local on_attach = function(client, bufnr)
-    require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-
     vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
         callback = function()
