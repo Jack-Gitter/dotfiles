@@ -14,13 +14,13 @@ local function get_eslint_closest_dir()
 end
 
 local on_attach = function(client, bufnr)
-    vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
         callback = function()
             vim.lsp.buf.format({
                 async = false,
                 filter = function(c)
-                    return c.name == "eslint"
+                    return c.name == 'eslint'
                 end
             })
         end,
