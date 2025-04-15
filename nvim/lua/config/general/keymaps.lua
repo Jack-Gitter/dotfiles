@@ -11,3 +11,4 @@ vim.keymap.set('n', '<c-x>', function()
         vim.cmd('q!')
     end
 end, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>hl', ':nohl')
