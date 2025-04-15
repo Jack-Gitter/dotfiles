@@ -1,6 +1,6 @@
 theme = Dracula+
 font-size = 17
-font-family =  "PT Mono"
+font-family =  "Iosevka Extended"
 cursor-style-blink = false
 shell-integration-features = no-cursor
 mouse-hide-while-typing = true
