@@ -1,18 +1,18 @@
 local on_attach = function(client, bufnr)
-    if client.supports_method("textDocument/hover") then
-        vim.keymap.set("n", "<leader>ho", function() vim.lsp.buf.hover({ border = "single" }) end,
+    if client.supports_method('textDocument/hover') then
+        vim.keymap.set('n', '<leader>ho', function() vim.lsp.buf.hover({ border = 'single' }) end,
             { buffer = true })
     end
 
-    if client.supports_method("textDocument/codeAction") then
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+    if client.supports_method('textDocument/codeAction') then
+        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
     end
 
-    if client.supports_method("textDocument/diagnostics") then
-        vim.keymap.set("n", "<leader>di", vim.diagnostic.open_float)
+    if client.supports_method('textDocument/diagnostics') then
+        vim.keymap.set('n', '<leader>di', vim.diagnostic.open_float)
     end
 
-    vim.api.nvim_create_autocmd("BufWritePre", {
+    vim.api.nvim_create_autocmd('BufWritePre', {
         buffer = bufnr,
         callback = function()
             vim.lsp.buf.format()
@@ -20,12 +20,12 @@ local on_attach = function(client, bufnr)
         end
     })
 
-    if client.supports_method("textDocument/signatureHelp") then
-        vim.keymap.set("i", "<c-;>", function() vim.lsp.buf.signature_help({ border = "single", title = "" }) end)
+    if client.supports_method('textDocument/signatureHelp') then
+        vim.keymap.set('i', '<c-;>', function() vim.lsp.buf.signature_help({ border = 'single', title = '' }) end)
     end
 
-    if client.supports_method("textDocument/rename") then
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+    if client.supports_method('textDocument/rename') then
+        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
     end
 end
 
@@ -50,12 +50,20 @@ vim.lsp.config('lua_ls', {
     log_level = vim.lsp.protocol.MessageType.Warning,
     settings = {
         Lua = {
+            runtime = { version = 'LuaJIT' },
+            signatureHelp = { enabled = true },
+            format = {
+                enable = true,
+                defaultConfig = {
+                    quote_style = 'single'
+                },
+            },
             workspace = {
-                checkThirdParty = "Disable",
-                ignoreDir = { "~/.local/" },
+                checkThirdParty = 'Disable',
+                ignoreDir = { '~/.local/' },
             },
             diagnostics = {
-                libraryFiles = "Disable",
+                libraryFiles = 'Disable',
                 globals = { 'vim' }
             }
         }
