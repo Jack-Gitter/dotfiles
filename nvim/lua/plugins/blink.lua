@@ -2,7 +2,7 @@ return {
     'saghen/blink.cmp',
     dependencies = {
         { 'L3MON4D3/LuaSnip',            version = 'v2.*' },
-        { "rafamadriz/friendly-snippets" }
+        { 'rafamadriz/friendly-snippets' }
     },
     version = '1.*',
     opts = {
@@ -25,11 +25,11 @@ return {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
             per_filetype = { sql = { 'dadbod' } },
             providers = {
-                dadbod = { module = "vim_dadbod_completion.blink" },
+                dadbod = { module = 'vim_dadbod_completion.blink' },
             }
         },
-        fuzzy = { implementation = "prefer_rust_with_warning" }
+        fuzzy = { implementation = 'prefer_rust_with_warning' }
     },
-    opts_extend = { "sources.default" },
-    event = { "LspAttach" }
+    opts_extend = { 'sources.default' },
+    event = { 'LspAttach' }
 }

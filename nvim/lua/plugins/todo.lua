@@ -10,5 +10,5 @@ return {
         local todo = require('todo')
         todo.setup(opts)
     end,
-    keys = { "<leader>td" }
+    keys = { '<leader>td' }
 }

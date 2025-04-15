@@ -3,7 +3,7 @@ vim.diagnostic.config({
     underline = false,
     severity_sort = true,
     float = {
-        border = "single"
+        border = 'single'
     },
     signs = {
         text = {

@@ -1,26 +1,26 @@
 local on_attach = function(client, bufnr)
-    require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+    require('workspace-diagnostics').populate_workspace_diagnostics(client, bufnr)
 
-    if client.supports_method("textDocument/hover") then
-        vim.keymap.set("n", "<leader>ho", function() vim.lsp.buf.hover({ border = "single" }) end,
+    if client.supports_method('textDocument/hover') then
+        vim.keymap.set('n', '<leader>ho', function() vim.lsp.buf.hover({ border = 'single' }) end,
             { buffer = true })
     end
 
-    if client.supports_method("textDocument/codeAction") then
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+    if client.supports_method('textDocument/codeAction') then
+        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
     end
 
-    if client.supports_method("textDocument/diagnostics") then
-        vim.keymap.set("n", "<leader>di", vim.diagnostic.open_float)
+    if client.supports_method('textDocument/diagnostics') then
+        vim.keymap.set('n', '<leader>di', vim.diagnostic.open_float)
     end
 
 
-    if client.supports_method("textDocument/signatureHelp") then
-        vim.keymap.set("i", "<c-;>", function() vim.lsp.buf.signature_help({ border = "single", title = "" }) end)
+    if client.supports_method('textDocument/signatureHelp') then
+        vim.keymap.set('i', '<c-;>', function() vim.lsp.buf.signature_help({ border = 'single', title = '' }) end)
     end
 
-    if client.supports_method("textDocument/rename") then
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+    if client.supports_method('textDocument/rename') then
+        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
     end
 end
 

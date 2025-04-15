@@ -6,5 +6,5 @@ return {
             completions = { lsp = { enabled = true } },
         })
     end,
-    ft = { "md", "markdown" }
+    ft = { 'md', 'markdown' }
 }

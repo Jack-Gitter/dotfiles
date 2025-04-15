@@ -1,11 +1,11 @@
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = {
-        {'nvim-tree/nvim-web-devicons'},
-        { "echasnovski/mini.icons", opts = {} },
+        { 'nvim-tree/nvim-web-devicons' },
+        { 'echasnovski/mini.icons',     opts = {} },
     },
     opts = {
-        theme = "dracula-nvim",
+        theme = 'dracula-nvim',
         sections = {
             lualine_c = { 'filename' },
             lualine_x = {},
@@ -13,5 +13,5 @@ return {
             lualine_z = { 'location' }
         }
     },
-    event = "BufEnter",
+    event = 'BufEnter',
 }

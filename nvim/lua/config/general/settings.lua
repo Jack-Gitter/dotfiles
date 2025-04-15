@@ -1,6 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = 'unnamedplus'
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
@@ -11,4 +11,4 @@ vim.o.cmdheight = 0
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.cursorline = true
-vim.opt.cursorlineopt = "number"
+vim.opt.cursorlineopt = 'number'

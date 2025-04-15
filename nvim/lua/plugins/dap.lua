@@ -1,12 +1,12 @@
 return {
-    "mfussenegger/nvim-dap",
+    'mfussenegger/nvim-dap',
     dependencies = {
-        "leoluz/nvim-dap-go"
+        'leoluz/nvim-dap-go'
     },
     config = function()
-        local dap = require("dap")
+        local dap = require('dap')
 
-        require("dap-go").setup()
+        require('dap-go').setup()
 
         vim.fn.sign_define('DapBreakpoint', { text = '🔴', texthl = '', linehl = '', numhl = '' })
         vim.fn.sign_define('DapBreakpointCondition', { text = '❓', texthl = '', linehl = '', numhl = '' })
@@ -24,48 +24,48 @@ return {
             require('dap.ui.widgets').hover()
         end)
 
-        dap.adapters["pwa-node"] = {
-            type = "server",
-            host = "localhost",
-            port = "${port}",
+        dap.adapters['pwa-node'] = {
+            type = 'server',
+            host = 'localhost',
+            port = '${port}',
             executable = {
-                command = "node",
-                args = { vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js", "${port}" },
+                command = 'node',
+                args = { vim.fn.stdpath('data') .. '/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js', '${port}' },
             }
         }
         dap.configurations.javascript = {
             {
-                type = "pwa-node",
-                request = "launch",
-                name = "Launch file with node",
-                program = "${file}",
-                cwd = "${workspaceFolder}",
+                type = 'pwa-node',
+                request = 'launch',
+                name = 'Launch file with node',
+                program = '${file}',
+                cwd = '${workspaceFolder}',
             },
             {
-                type = "pwa-node",
-                request = "attach",
-                name = "Attach",
+                type = 'pwa-node',
+                request = 'attach',
+                name = 'Attach',
                 processId = require('dap.utils').pick_process,
-                cwd = "${workspaceFolder}",
+                cwd = '${workspaceFolder}',
             }
         }
         dap.configurations.typescript = {
             {
-                type = "pwa-node",
-                request = "launch",
-                name = "Launch file with ts-node",
-                program = "${file}",
-                cwd = "${workspaceFolder}",
+                type = 'pwa-node',
+                request = 'launch',
+                name = 'Launch file with ts-node',
+                program = '${file}',
+                cwd = '${workspaceFolder}',
                 sourceMaps = true,
             },
             {
-                type = "pwa-node",
-                request = "attach",
-                name = "Attach to a NestJS project",
+                type = 'pwa-node',
+                request = 'attach',
+                name = 'Attach to a NestJS project',
                 processId = require('dap.utils').pick_process,
-                cwd = "${workspaceFolder}",
+                cwd = '${workspaceFolder}',
                 sourceMaps = true,
-                outFiles = { "${workspaceFolder}/dist/**/*.js" },
+                outFiles = { '${workspaceFolder}/dist/**/*.js' },
             }
         }
     end,
