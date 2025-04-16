@@ -21,7 +21,10 @@ return {
                 '<leader>rr',
                 function() require('kulala').replay() end,
             },
-            ['Find request'] = false
+            ['Find request'] = {
+                '<leader>rs',
+                function() require('kulala').search() end
+            }
         },
     },
 }
