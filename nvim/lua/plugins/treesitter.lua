@@ -10,5 +10,6 @@ return {
     config = function(_, opts)
         require('nvim-treesitter').setup(opts)
         vim.cmd('TSEnable highlight')
-    end
+    end,
+    event = { 'BufEnter' }
 }
