@@ -22,6 +22,7 @@ return {
         vim.keymap.set('n', '<leader>gd', snacks.picker.lsp_definitions)
         vim.keymap.set('n', '<leader>ws', snacks.picker.lsp_workspace_symbols)
         vim.keymap.set('n', '<leader>wd', snacks.picker.diagnostics)
+        vim.keymap.set('n', '<leader>qf', function() snacks.picker.actions.qflist_all(Snacks.picker.get()[1]) end)
     end,
     keys = { '<leader>ff', '<leader>gr', '<leader>fr', '<leader>gi', '<leader>gd', '<leader>ws', '<leader>wd' },
     lazy = true
