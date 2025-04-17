@@ -22,7 +22,7 @@ return {
                 function() require('kulala').replay() end,
             },
             ['Find request'] = {
-                '<leader>rs',
+                '<leader>sr',
                 function() require('kulala').search() end
             },
             ['Switch environments'] = {
