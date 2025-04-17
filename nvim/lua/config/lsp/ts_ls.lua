@@ -22,6 +22,9 @@ local on_attach = function(client, bufnr)
     if client.supports_method('textDocument/rename') then
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
     end
+
+    vim.cmd('compiler tsc')
+    vim.o.makeprg = 'npx tsc'
 end
 
 local root_markers = {

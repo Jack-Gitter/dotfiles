@@ -5,6 +5,8 @@ vim.keymap.set('n', '<c-p>', '<c-^>')
 vim.keymap.set('n', '<c-s>', function() vim.cmd('split') end)
 vim.keymap.set('n', '<c-v>', function() vim.cmd('vs') end)
 vim.keymap.set('n', 'U', '<c-r>')
+vim.keymap.set('n', '<leader>cn', function() vim.cmd('cnext') end)
+vim.keymap.set('n', '<leader>cp', function() vim.cmd('cprev') end)
 vim.keymap.set('n', '<c-x>', function()
     local success, _ = pcall(vim.cmd, 'wq')
     if not success then
