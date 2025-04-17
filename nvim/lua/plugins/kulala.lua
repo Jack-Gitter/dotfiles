@@ -24,6 +24,11 @@ return {
             ['Find request'] = {
                 '<leader>rs',
                 function() require('kulala').search() end
+            },
+            ['Switch environments'] = {
+                '<leader>re',
+                function() require('kulala').set_selected_env() end
+
             }
         },
     },
