@@ -5,7 +5,6 @@ return {
     ft = { 'html' },
     config = function(_, opts)
         require('live-server').setup(opts)
-        vim.keymap.set('n', '<leader>ls', function() vim.cmd('LiveServerStart') end)
-        vim.keymap.set('n', '<leader>xls', function() vim.cmd('LiveServerStart') end)
+        vim.keymap.set('n', '<leader>ls', function() vim.cmd('LiveServerToggle') end)
     end
 }
