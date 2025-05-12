@@ -1,7 +1,15 @@
 return {
     'folke/snacks.nvim',
     opts = {
-        picker = {}
+        picker = {
+            win = {
+                input = {
+                    keys = {
+                        ['<leader>hh'] = { 'toggle_hidden', mode = { 'n' } },
+                    }
+                }
+            }
+        }
     },
     config = function(_, opts)
         local snacks = require('snacks')
