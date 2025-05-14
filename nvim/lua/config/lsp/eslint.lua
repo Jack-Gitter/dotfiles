@@ -15,6 +15,7 @@ end
 
 local on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd('BufWritePre', {
+        bufnr = bufnr,
         pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
         callback = function()
             vim.lsp.buf.format({
