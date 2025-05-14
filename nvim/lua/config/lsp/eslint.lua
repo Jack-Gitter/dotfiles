@@ -17,26 +17,12 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd('BufWritePre', {
         pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
         callback = function(args)
-            local b = args.buf
-            local available_formatters = vim.lsp.buf_get_clients(b)
-            local eslint_available = false
-
-            for _, c in pairs(available_formatters) do
-                if c.name == 'eslint' and c.server_capabilities.documentFormattingProvider then
-                    eslint_available = true
-                    break
+            vim.lsp.buf.format({
+                async = false,
+                filter = function(c)
+                    return c.name == 'eslint'
                 end
-            end
-
-            if eslint_available then
-                vim.lsp.buf.format({
-                    b = bufnr,
-                    async = false,
-                    filter = function(c)
-                        return c.name == 'eslint'
-                    end
-                })
-            end
+            })
         end,
     })
 
