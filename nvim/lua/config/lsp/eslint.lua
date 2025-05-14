@@ -17,10 +17,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd('BufWritePre', {
         pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
         callback = function(args)
-            -- Get the specific buffer being saved
             local b = args.buf
-
-            -- Check if eslint is available for this specific buffer
             local available_formatters = vim.lsp.buf_get_clients(b)
             local eslint_available = false
 
@@ -31,7 +28,6 @@ local on_attach = function(client, bufnr)
                 end
             end
 
-            -- Only format if eslint is available for this buffer
             if eslint_available then
                 vim.lsp.buf.format({
                     b = bufnr,
