@@ -13,8 +13,13 @@ return {
                         ['af'] = '@function.outer',
                         ['if'] = '@function.inner',
                         ['ac'] = '@class.outer',
-                        ['ic'] = { query = '@class.inner', desc = 'Select inner part of a class region' },
-                        ['as'] = { query = '@local.scope', query_group = 'locals', desc = 'Select language scope' },
+                        ['il'] = '@loop.inner',
+                        ['al'] = '@loop.outer',
+                        ['ic'] = '@class.inner',
+                        ['aa'] = '@assignment.inner',
+                        ['ia'] = '@assignment.inner',
+                        ['la'] = '@assignment.lhs',
+                        ['ra'] = '@assignment.rhs',
                     },
                     selection_modes = {
                         ['@parameter.outer'] = 'v', -- charwise
