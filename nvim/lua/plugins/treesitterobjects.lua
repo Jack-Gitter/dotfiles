@@ -20,6 +20,8 @@ return {
                         ['ia'] = '@assignment.inner',
                         ['la'] = '@assignment.lhs',
                         ['ra'] = '@assignment.rhs',
+                        ['ii'] = '@conditional.inner',
+                        ['ai'] = '@conditional.outer',
                     },
                     selection_modes = {
                         ['@parameter.outer'] = 'v', -- charwise
