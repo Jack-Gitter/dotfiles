@@ -1,5 +1,5 @@
 theme = Dracula+
-font-size = 17
+font-size = 14.5
 font-family =  "Iosevka Term Extended"
 cursor-style-blink = false
 shell-integration-features = no-cursor
