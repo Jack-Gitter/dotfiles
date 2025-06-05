@@ -14,9 +14,16 @@ local function get_eslint_closest_dir()
 end
 
 local on_attach = function(client, bufnr)
+    local root_dir = client.root_dir
+
+    if root_dir == nil then
+        client.stop()
+        return
+    end
+
     vim.api.nvim_create_autocmd('BufWritePre', {
         pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
-        callback = function(args)
+        callback = function()
             vim.lsp.buf.format({
                 async = false,
                 filter = function(c)
@@ -26,11 +33,6 @@ local on_attach = function(client, bufnr)
         end,
     })
 
-    local root_dir = client.root_dir
-
-    if root_dir == nil then
-        return
-    end
 
     if
         vim.fn.filereadable(root_dir .. '/eslint.config.js') == 1
