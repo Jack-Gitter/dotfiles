@@ -1,4 +1,3 @@
-require('config.lsp.eslint')
 require('config.lsp.ts_ls')
 require('config.lsp.gopls')
 require('config.lsp.pyright')
