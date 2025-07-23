@@ -12,8 +12,8 @@
 --     end,
 --     lazy = false
 -- }
--- return { "navarasu/onedark.nvim", opts = {}, config = function() require("onedark").load() end, lazy = false }
-return { 'rose-pine/neovim', name = 'rose-pine', config = function() vim.cmd('colorscheme rose-pine') end, lazy = false }
+return { 'navarasu/onedark.nvim', opts = {}, config = function() require('onedark').load() end, lazy = false }
+-- return { 'rose-pine/neovim', name = 'rose-pine', config = function() vim.cmd('colorscheme rose-pine') end, lazy = false }
 -- return {
 --     'ribru17/bamboo.nvim',
 --     config = function()
