@@ -1,7 +1,7 @@
 return {
     'Jack-Gitter/todo.nvim',
     dependencies = {
-        'MeanderingProgrammer/render-markdown.nvim',
+        -- 'MeanderingProgrammer/render-markdown.nvim',
     },
     opts = {
         fullpath = vim.env.HOME .. '/.config/todo.md',
