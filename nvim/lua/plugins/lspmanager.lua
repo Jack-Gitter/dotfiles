@@ -13,5 +13,5 @@ return {
         require('mason-lspconfig').setup({ ensure_installed = { 'ts_ls', 'lua_ls', 'gopls', 'pyright', } })
         require('mason-nvim-dap').setup({ ensure_installed = { 'js', 'delve' } })
     end,
-    event = { 'BufReadPost', 'BufNewFile' },
+    event = { 'BufReadPre', 'BufNewFile' },
 }
