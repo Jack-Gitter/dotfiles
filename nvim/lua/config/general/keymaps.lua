@@ -17,3 +17,4 @@ vim.keymap.set('n', '<leader>hl', ':nohl<cr>')
 
 vim.keymap.set('n', '<leader>L', function() vim.cmd('vertical resize -15') end)
 vim.keymap.set('n', '<leader>J', function() vim.cmd('vertical resize +15') end)
+vim.keymap.set('n', '<leader>v', function() vim.cmd('vnew') end)
