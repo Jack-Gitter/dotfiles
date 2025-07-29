@@ -37,6 +37,6 @@ return {
         vim.keymap.set('n', '<leader>ws', snacks.picker.lsp_workspace_symbols)
         vim.keymap.set('n', '<leader>wd', snacks.picker.diagnostics)
         vim.keymap.set('n', '<leader>qf', function() snacks.picker.actions.qflist_all(Snacks.picker.get()[1]) end)
-        vim.keymap.set('n', '<leader>vgd', function() open_in_split(snacks.picker.lsp_definitions) end)
+        vim.keymap.set('n', '<leader>gvd', function() open_in_split(snacks.picker.lsp_definitions) end)
     end,
 }
