@@ -1,6 +1,14 @@
 return {
     'lewis6991/gitsigns.nvim',
-    opts = {},
+    opts = {
+        preview_config = {
+            col = 1,
+            relative = 'cursor',
+            row = 0,
+            style = 'minimal',
+            border = 'single'
+        }
+    },
     config = function(_, opts)
         local gitsigns = require('gitsigns')
         gitsigns.setup(opts)
