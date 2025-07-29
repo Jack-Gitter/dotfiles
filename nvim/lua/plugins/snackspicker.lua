@@ -23,6 +23,12 @@ return {
                 return vim.fn.getcwd()
             end
         end
+
+        local open_in_split = function(func)
+            vim.cmd('vsplit')
+            func()
+        end
+
         vim.keymap.set('n', '<leader>ff', function() snacks.picker.files({ cwd = ws() }) end)
         vim.keymap.set('n', '<leader>gr', function() snacks.picker.grep({ cwd = ws() }) end)
         vim.keymap.set('n', '<leader>fr', snacks.picker.lsp_references)
@@ -31,5 +37,6 @@ return {
         vim.keymap.set('n', '<leader>ws', snacks.picker.lsp_workspace_symbols)
         vim.keymap.set('n', '<leader>wd', snacks.picker.diagnostics)
         vim.keymap.set('n', '<leader>qf', function() snacks.picker.actions.qflist_all(Snacks.picker.get()[1]) end)
+        vim.keymap.set('n', '<leader>vgd', function() open_in_split(snacks.picker.lsp_definitions) end)
     end,
 }
