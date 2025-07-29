@@ -1,9 +1,5 @@
 return {
     'saghen/blink.cmp',
-    dependencies = {
-        { 'L3MON4D3/LuaSnip',            version = 'v2.*' },
-        { 'rafamadriz/friendly-snippets' }
-    },
     version = '1.*',
     opts = {
         keymap = {
@@ -16,13 +12,12 @@ return {
         appearance = {
             nerd_font_variant = 'mono'
         },
-        snippets = { preset = 'luasnip' },
         completion = {
             documentation = { auto_show = false, window = { border = 'single' } },
             menu = { border = 'single' }
         },
         sources = {
-            default = { 'lsp', 'path', 'snippets', 'buffer' },
+            default = { 'lsp', 'path', 'buffer' },
             per_filetype = { sql = { 'dadbod' } },
             providers = {
                 dadbod = { module = 'vim_dadbod_completion.blink' },
