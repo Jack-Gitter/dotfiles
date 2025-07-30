@@ -4,4 +4,5 @@ return {
     opts = {
         code = { highlight_border = false, language_border = ' ' },
     },
+    ft = { 'markdown' }
 }
