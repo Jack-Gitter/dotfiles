@@ -14,6 +14,8 @@ return {
         formatters_by_ft = {
             javascript = { 'eslint_d', 'prettierd', 'prettier', stop_after_first = true },
             typescript = { 'eslint_d', 'prettierd', 'prettier', stop_after_first = true },
+            javascriptreact = { 'eslint_d', 'prettierd', 'prettier', stop_after_first = true },
+            typescriptreact = { 'eslint_d', 'prettierd', 'prettier', stop_after_first = true },
             http = { 'kulala' },
 
         },
