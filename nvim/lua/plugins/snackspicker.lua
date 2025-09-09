@@ -6,6 +6,7 @@ return {
                 input = {
                     keys = {
                         ['<leader>hh'] = { 'toggle_hidden', mode = { 'n' } },
+                        ['<leader>ig'] = { 'toggle_ignored', mode = { 'n' } },
                     }
                 }
             }
