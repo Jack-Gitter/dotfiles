@@ -7,7 +7,6 @@ return {
     },
     opts = {
         keymaps = {
-            ['b'] = { 'actions.parent', mode = 'n' },
             ['<esc>'] = { 'actions.close', mode = 'n' },
             ['<leader>hh'] = { 'actions.toggle_hidden', mode = 'n' }
         },
