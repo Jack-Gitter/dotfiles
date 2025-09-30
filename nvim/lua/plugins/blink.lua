@@ -1,7 +1,9 @@
 return {
     'saghen/blink.cmp',
     version = '1.*',
+    dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
     opts = {
+        snippets = { preset = 'luasnip' },
         keymap = {
             preset = 'default',
             ['<c-k>'] = { 'select_prev', 'fallback' },
@@ -17,7 +19,7 @@ return {
             menu = { border = 'single' }
         },
         sources = {
-            default = { 'lsp', 'path', 'buffer' },
+            default = { 'lsp', 'path', 'snippets', 'buffer' },
             per_filetype = { sql = { 'dadbod' } },
             providers = {
                 dadbod = { module = 'vim_dadbod_completion.blink' },
