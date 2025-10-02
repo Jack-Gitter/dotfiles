@@ -37,7 +37,13 @@ return {
         vim.keymap.set('n', '<leader>gd', snacks.picker.lsp_definitions)
         vim.keymap.set('n', '<leader>ws', snacks.picker.lsp_workspace_symbols)
         vim.keymap.set('n', '<leader>wd', snacks.picker.diagnostics)
-        vim.keymap.set('n', '<leader>qf', function() snacks.picker.actions.qflist_all(Snacks.picker.get()[1]) end)
+        vim.keymap.set('n', '<leader>qf', function()
+            local pickers = Snacks.picker.get()
+            local picker = pickers and pickers[1]
+            if picker then
+                snacks.picker.actions.qflist_all(picker)
+            end
+        end)
         vim.keymap.set('n', '<leader>gvd', function() open_in_split(snacks.picker.lsp_definitions) end)
     end,
 }
