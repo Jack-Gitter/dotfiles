@@ -17,7 +17,6 @@ return {
             javascriptreact = { 'eslint_d', 'prettierd', 'prettier', stop_after_first = true },
             typescriptreact = { 'eslint_d', 'prettierd', 'prettier', stop_after_first = true },
             http = { 'kulala' },
-
         },
     },
 }
