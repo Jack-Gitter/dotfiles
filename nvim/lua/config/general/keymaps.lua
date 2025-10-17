@@ -25,3 +25,6 @@ vim.keymap.set('n', '<leader>v', function() vim.cmd('vnew') end)
 vim.keymap.set('n', '<leader>tn', function() vim.cmd('tabnext') end)
 vim.keymap.set('n', '<leader>tx', function() vim.cmd('tabclose') end)
 vim.keymap.set('n', '<leader>tp', function() vim.cmd('tabprev') end)
+
+vim.keymap.set('n', '<c-u>', '<c-u>zz')
+vim.keymap.set('n', '<c-d>', '<c-d>zz')
