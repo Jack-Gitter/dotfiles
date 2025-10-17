@@ -15,6 +15,13 @@ vim.keymap.set('n', '<c-x>', function()
 end, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>hl', ':nohl<cr>')
 
+-- windows
 vim.keymap.set('n', '<leader>L', function() vim.cmd('vertical resize -15') end)
 vim.keymap.set('n', '<leader>H', function() vim.cmd('vertical resize +15') end)
 vim.keymap.set('n', '<leader>v', function() vim.cmd('vnew') end)
+
+
+-- tabs
+vim.keymap.set('n', '<leader>tn', function() vim.cmd('tabnext') end)
+vim.keymap.set('n', '<leader>tx', function() vim.cmd('tabclose') end)
+vim.keymap.set('n', '<leader>tp', function() vim.cmd('tabprev') end)
