@@ -8,7 +8,8 @@ return {
         integrations = {
             diffview = true
         },
-        kind = 'floating'
+        kind = 'floating',
+        auto_close = true
     },
     config = function(_, opts)
         local neogit = require('neogit')
