@@ -18,8 +18,6 @@ return {
                         ['ic'] = '@class.inner',
                         ['aa'] = '@assignment.inner',
                         ['ia'] = '@assignment.inner',
-                        ['la'] = '@assignment.lhs',
-                        ['ra'] = '@assignment.rhs',
                         ['ii'] = '@conditional.inner',
                         ['ai'] = '@conditional.outer',
                     },
