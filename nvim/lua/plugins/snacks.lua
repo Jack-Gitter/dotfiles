@@ -20,6 +20,7 @@ return {
 		vim.keymap.set('n', '<leader>fr', snacks.picker.lsp_references)
 		vim.keymap.set('n', '<leader>gd', snacks.picker.lsp_definitions)
 		vim.keymap.set('n', '<leader>wd', snacks.picker.diagnostics)
+		vim.keymap.set('n', '<leader>h', snacks.picker.help)
 		vim.keymap.set('n', '<leader>qf',
 			function()
 				local pickers = Snacks.picker.get()
@@ -30,5 +31,5 @@ return {
 			end
 		)
 	end,
-	keys = { '<leader>ff', '<leader>gr', '<leader>fr', '<leader>gd', '<leader>wd', '<leader>qf' }
+	keys = { '<leader>ff', '<leader>gr', '<leader>fr', '<leader>gd', '<leader>wd', '<leader>qf', '<leader>h' }
 }
