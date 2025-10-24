@@ -10,3 +10,4 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.swapfile = false
 vim.o.autoread = true
+vim.opt.signcolumn = 'yes'
