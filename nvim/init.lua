@@ -1,4 +1,8 @@
-require('config')
-
--- for having ftplugins under lua/
-vim.opt.rtp:prepend(vim.fn.stdpath('config') .. '/lua/')
+require('config.general.keymaps')
+require('config.general.opts')
+require('config.diagnostics.diagnostics')
+require('config.lazy.lazy')
+require('config.autocmds.highlight_on_yank')
+require('config.lsp')
+require('config.lsp.ts_ls')
+require('config.lsp.lua_ls')
