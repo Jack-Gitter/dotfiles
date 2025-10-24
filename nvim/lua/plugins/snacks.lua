@@ -1,6 +1,7 @@
 return {
 	'folke/snacks.nvim',
 	opts = {},
+	dependencies = { 'nvim-mini/mini.icons', version = '*', opts = {} },
 	config = function(_, opts)
 		local snacks = require('snacks')
 		snacks.setup(opts)
