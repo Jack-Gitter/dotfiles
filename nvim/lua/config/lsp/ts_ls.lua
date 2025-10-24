@@ -1,6 +1,12 @@
+local on_attach = function(client, bufnr)
+    vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+    vim.cmd[[set completeopt+=menuone,noselect,popup]]
+end
+
 vim.lsp.config.ts_ls = {
-    init_options = { hostInfo = 'neovim' },
+    init_options = { hostInfo = 'neovim',  },
     cmd = { 'typescript-language-server', '--stdio' },
+    on_attach = on_attach,
     filetypes = {
         'javascript',
         'javascriptreact',
@@ -18,4 +24,5 @@ vim.lsp.config.ts_ls = {
             completeFunctionCalls = true
         }
     },
+
 }
