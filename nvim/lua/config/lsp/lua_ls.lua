@@ -1,6 +1,6 @@
 local on_attach = function(client, bufnr)
-	-- vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
-	-- vim.cmd [[set completeopt+=menuone,noselect,popup]]
+	vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+	vim.cmd [[set completeopt+=menuone,noselect,popup]]
 end
 
 vim.lsp.config.lua_ls = {
