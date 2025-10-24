@@ -12,4 +12,5 @@ return {
 			typescriptreact = { 'eslint_d', 'prettierd', 'prettier', stop_after_first = true },
 		},
 	},
+	ft = { 'lua', 'typescript', 'javascript', 'typescriptreact', 'javascriptreact' }
 }

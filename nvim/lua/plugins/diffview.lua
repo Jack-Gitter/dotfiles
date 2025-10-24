@@ -6,5 +6,6 @@ return {
 		diffview.setup(opts)
 		vim.keymap.set('n', '<leader>diff', function() vim.cmd('DiffviewOpen') end)
 		vim.keymap.set('n', '<c-c>', function() vim.cmd('DiffviewClose') end)
-	end
+	end,
+	keys = { '<leader>diff' }
 }

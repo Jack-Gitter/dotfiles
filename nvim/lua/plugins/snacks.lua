@@ -29,5 +29,6 @@ return {
 				end
 			end
 		)
-	end
+	end,
+	keys = { '<leader>ff', '<leader>gr', '<leader>fr', '<leader>gd', '<leader>wd', '<leader>qf' }
 }
