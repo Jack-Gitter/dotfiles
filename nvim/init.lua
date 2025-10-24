@@ -1,7 +1,8 @@
 require('config.general.keymaps')
 require('config.general.opts')
+require('config.diagnostics.diagnostics')
 require('config.plugins.lazy')
-
+require('config.autocmds.highlight_on_yank')
 require('config.lsp')
 require('config.lsp.ts_ls')
 require('config.lsp.lua_ls')
