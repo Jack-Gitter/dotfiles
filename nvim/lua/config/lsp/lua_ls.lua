@@ -27,6 +27,7 @@ vim.lsp.config.lua_ls = {
 			workspace = {
 				checkThirdParty = 'Disable',
 				ignoreDir = { '~/.local/' },
+				library = vim.api.nvim_get_runtime_file('', true)
 			},
 			diagnostics = {
 				libraryFiles = 'Disable',
