@@ -1,5 +1,4 @@
-require('config.general.keymaps')
-require('config.general.opts')
+require('config.general')
 require('config.diagnostics.diagnostics')
 require('config.lazy.lazy')
 require('config.autocmds.highlight_on_yank')
