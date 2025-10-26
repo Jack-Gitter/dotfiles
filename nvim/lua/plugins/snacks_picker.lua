@@ -15,21 +15,18 @@ return {
 			end
 		end
 
+		local qf = function()
+			local pickers = Snacks.picker.get()
+			local picker = pickers and pickers[1]
+			if picker then
+				snacks.picker.actions.qflist_all(picker)
+			end
+		end
+
 		vim.keymap.set('n', '<leader>ff', function() snacks.picker.files({ cwd = ws() }) end)
 		vim.keymap.set('n', '<leader>gr', function() snacks.picker.grep({ cwd = ws() }) end)
-		vim.keymap.set('n', '<leader>fr', snacks.picker.lsp_references)
-		vim.keymap.set('n', '<leader>gd', snacks.picker.lsp_definitions)
-		vim.keymap.set('n', '<leader>wd', snacks.picker.diagnostics)
 		vim.keymap.set('n', '<leader>h', snacks.picker.help)
-		vim.keymap.set('n', '<leader>qf',
-			function()
-				local pickers = Snacks.picker.get()
-				local picker = pickers and pickers[1]
-				if picker then
-					snacks.picker.actions.qflist_all(picker)
-				end
-			end
-		)
+		vim.keymap.set('n', '<leader>qf', qf)
 	end,
-	keys = { '<leader>ff', '<leader>gr', '<leader>fr', '<leader>gd', '<leader>wd', '<leader>qf', '<leader>h' }
+	keys = { '<leader>ff', '<leader>gr', '<leader>qf', '<leader>h' }
 }
