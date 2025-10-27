@@ -10,5 +10,6 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.swapfile = false
 vim.o.autoread = true
+vim.o.ignorecase = true
 vim.opt.signcolumn = 'yes'
 vim.o.completeopt = 'menuone,noselect,popup'
