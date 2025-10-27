@@ -19,7 +19,7 @@ return {
 			},
 		},
 	},
-	config = function(_, opts)
+	init = function(_, opts)
 		local evergarden = require('evergarden')
 		evergarden.setup(opts)
 		vim.cmd('colorscheme evergarden')
