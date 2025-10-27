@@ -1,6 +1,6 @@
 vim.diagnostic.config({
 	underline = false,
-	virtual_text = true,
+	virtual_text = false,
 	severity_sort = true,
 	float = {
 		border = 'rounded'
