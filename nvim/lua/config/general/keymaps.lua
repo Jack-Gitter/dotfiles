@@ -9,4 +9,4 @@ vim.keymap.set('n', '<c-u>', '<c-u>zz')
 
 vim.keymap.set('n', '<leader>cq', function() vim.cmd('cclose') end)
 
-vim.keymap.set('n', '<c-d>', vim.diagnostic.open_float)
+vim.keymap.set('n', 'ge', vim.diagnostic.open_float)
