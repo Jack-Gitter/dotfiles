@@ -1,11 +1,6 @@
-local on_attach = function(client, bufnr)
-	vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
-end
-
 vim.lsp.config.ts_ls = {
 	init_options = { hostInfo = 'neovim', },
 	cmd = { 'typescript-language-server', '--stdio' },
-	on_attach = on_attach,
 	filetypes = {
 		'javascript',
 		'javascriptreact',

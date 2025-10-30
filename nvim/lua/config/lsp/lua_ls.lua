@@ -1,10 +1,5 @@
-local on_attach = function(client, bufnr)
-	vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
-end
-
 vim.lsp.config.lua_ls = {
 	cmd = { 'lua-language-server' },
-	on_attach = on_attach,
 	filetypes = { 'lua' },
 	root_markers = {
 		'.luarc.json',
