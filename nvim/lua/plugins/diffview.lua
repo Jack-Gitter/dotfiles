@@ -1,11 +1,9 @@
-return {
-	'sindrets/diffview.nvim',
-	opts = {},
-	config = function(_, opts)
-		local diffview = require('diffview')
-		diffview.setup(opts)
-		vim.keymap.set('n', '<leader>diff', function() vim.cmd('DiffviewOpen') end)
-		vim.keymap.set('n', '<c-c>', function() vim.cmd('DiffviewClose') end)
-	end,
-	keys = { '<leader>diff' }
-}
+vim.pack.add({
+	{src = 'https://github.com/sindrets/diffview.nvim'}
+})
+
+local diffview = require('diffview')
+diffview.setup()
+vim.keymap.set('n', '<leader>diff', function() vim.cmd('DiffviewOpen') end)
+vim.keymap.set('n', '<c-c>', function() vim.cmd('DiffviewClose') end)
+
