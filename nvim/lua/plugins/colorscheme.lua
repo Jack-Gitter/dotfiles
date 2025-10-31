@@ -1,5 +1,5 @@
 vim.pack.add({
-	{src = 'https://github.com/everviolet/nvim'}
+	{ src = 'https://github.com/everviolet/nvim' }
 })
 
 local evergarden = require('evergarden')
@@ -23,5 +23,3 @@ evergarden.setup({
 })
 
 vim.cmd('colorscheme evergarden')
-
-
