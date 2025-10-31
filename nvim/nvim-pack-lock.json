@@ -1,5 +1,10 @@
 {
   "plugins": {
+    "blink": {
+      "rev": "327fff9",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "'v1.7.0'"
+    },
     "blink.cmp": {
       "version": "'v1.7.0'"
     },
@@ -16,6 +21,11 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "mason.nvim": [],
+    "mini-icons": {
+      "rev": "397ed38",
+      "src": "https://github.com/nvim-mini/mini.icons",
+      "version": "'v0.16.0'"
+    },
     "mini.icons": {
       "src": "https://github.com/nvim-mini/mini.icons",
       "version": "'v0.16.0'"
