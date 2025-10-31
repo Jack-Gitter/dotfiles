@@ -23,3 +23,5 @@ blink.setup({
 vim.keymap.set('i', '<C-x><C-o>', function() blink.show() end)
 vim.keymap.set('i', '<C-x><C-o>', function() blink.show() end)
 vim.keymap.set('i', '<C-k>', function() blink.show_documentation() end)
+vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { link = 'PMenuShadow' })
+vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { link = 'PMenuMatch' })
