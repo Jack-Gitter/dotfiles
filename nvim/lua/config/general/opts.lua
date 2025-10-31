@@ -13,3 +13,4 @@ vim.o.autoread = true
 vim.o.ignorecase = true
 vim.opt.signcolumn = 'yes'
 vim.o.completeopt = 'menuone,noselect,popup'
+vim.o.splitright = true
