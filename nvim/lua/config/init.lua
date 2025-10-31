@@ -1,6 +1,5 @@
 require('config.lsp')
 require('config.keymaps')
-require('config.highlights')
 require('config.autocmds')
 require('config.opts')
 require('config.diagnostics')
