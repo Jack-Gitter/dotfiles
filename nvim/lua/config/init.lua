@@ -1,6 +1,5 @@
 require('config.general')
 require('config.diagnostics.diagnostics')
-require('config.lazy.lazy')
 require('config.autocmds.highlight_on_yank')
 require('config.lsp')
 require('config.lsp.ts_ls')

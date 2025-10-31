@@ -1,0 +1,41 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "version": "'v1.7.0'"
+    },
+    "conform.nvim": {
+      "rev": "9fd3d5e",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "diffview.nvim": {
+      "rev": "4516612",
+      "src": "https://github.com/sindrets/diffview.nvim"
+    },
+    "gitsigns.nvim": {
+      "rev": "20ad441",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "mason.nvim": [],
+    "mini.icons": {
+      "src": "https://github.com/nvim-mini/mini.icons",
+      "version": "'v0.16.0'"
+    },
+    "nvim": {
+      "rev": "951d0c4",
+      "src": "https://github.com/everviolet/nvim"
+    },
+    "nvim-tmux-navigation": {
+      "rev": "4898c98",
+      "src": "https://github.com/alexghergh/nvim-tmux-navigation"
+    },
+    "nvim-web-devicons": [],
+    "oil.nvim": {
+      "rev": "7e1cd77",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "snacks.nvim": {
+      "rev": "76160be",
+      "src": "https://github.com/folke/snacks.nvim"
+    }
+  }
+}
