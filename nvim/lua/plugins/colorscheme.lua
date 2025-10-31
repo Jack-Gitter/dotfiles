@@ -1,7 +1,3 @@
-vim.pack.add({
-	{ src = 'https://github.com/everviolet/nvim' }
-})
-
 local evergarden = require('evergarden')
 
 evergarden.setup({

@@ -16,11 +16,18 @@
       "rev": "4516612",
       "src": "https://github.com/sindrets/diffview.nvim"
     },
+    "evergarden": {
+      "rev": "951d0c4",
+      "src": "https://github.com/everviolet/nvim"
+    },
     "gitsigns.nvim": {
       "rev": "20ad441",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
-    "mason.nvim": [],
+    "mason.nvim": {
+      "rev": "ad7146a",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
     "mini-icons": {
       "rev": "397ed38",
       "src": "https://github.com/nvim-mini/mini.icons",

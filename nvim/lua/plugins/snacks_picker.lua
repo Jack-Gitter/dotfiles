@@ -1,8 +1,3 @@
-vim.pack.add({
-	{ src = 'https://github.com/nvim-mini/mini.icons', version = 'v0.16.0', name = 'mini-icons' },
-	{ src = 'https://github.com/folke/snacks.nvim' }
-})
-
 local icons = require('mini.icons')
 icons.setup()
 

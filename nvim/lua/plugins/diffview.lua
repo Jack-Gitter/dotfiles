@@ -1,7 +1,3 @@
-vim.pack.add({
-	{ src = 'https://github.com/sindrets/diffview.nvim' }
-})
-
 local diffview = require('diffview')
 diffview.setup()
 vim.keymap.set('n', '<leader>diff', function() vim.cmd('DiffviewOpen') end)

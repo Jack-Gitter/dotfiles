@@ -1,11 +1,3 @@
-vim.pack.add({
-	{
-		src = 'https://github.com/saghen/blink.cmp',
-		version = 'v1.7.0',
-		name = 'blink'
-	}
-})
-
 local blink = require('blink-cmp')
 
 blink.setup({
