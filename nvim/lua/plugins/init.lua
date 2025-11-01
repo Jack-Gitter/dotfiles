@@ -1,7 +1,7 @@
 vim.pack.add({
 	{ src = 'https://github.com/everviolet/nvim',                 name = 'evergarden' },
 	{ src = 'https://github.com/stevearc/conform.nvim',           name = 'conform.nvim' },
-	{ src = 'https://github.com/sindrets/diffview.nvim',          name = 'diffview.nvim' },
+	-- { src = 'https://github.com/sindrets/diffview.nvim',          name = 'diffview.nvim' },
 	{ src = 'https://github.com/lewis6991/gitsigns.nvim',         name = 'gitsigns.nvim' },
 	{ src = 'https://github.com/mason-org/mason.nvim',            name = 'mason.nvim' },
 	{ src = 'https://github.com/stevearc/oil.nvim',               name = 'oil.nvim' },
@@ -18,7 +18,7 @@ vim.pack.add({
 require('plugins.oil')
 require('plugins.colorscheme')
 require('plugins.conform')
-require('plugins.diffview')
+-- require('plugins.diffview')
 require('plugins.gitsigns')
 require('plugins.mason')
 require('plugins.blink_cmp')
