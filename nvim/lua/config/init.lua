@@ -1,4 +1,3 @@
-require('config.lsp')
 require('config.keymaps')
 require('config.autocmds')
 require('config.opts')

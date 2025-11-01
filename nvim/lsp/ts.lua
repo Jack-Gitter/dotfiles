@@ -1,4 +1,4 @@
-vim.lsp.config.ts_ls = {
+return {
 	init_options = { hostInfo = 'neovim', },
 	cmd = { 'typescript-language-server', '--stdio' },
 	filetypes = {
@@ -18,5 +18,4 @@ vim.lsp.config.ts_ls = {
 			completeFunctionCalls = true
 		}
 	},
-
 }
