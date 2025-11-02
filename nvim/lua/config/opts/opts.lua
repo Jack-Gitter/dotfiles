@@ -14,3 +14,6 @@ vim.o.ignorecase = true
 vim.opt.signcolumn = 'yes'
 vim.o.completeopt = 'menuone,noselect,popup'
 vim.o.splitright = true
+vim.o.scrolloff = 8
+vim.o.showmode = false
+vim.o.cmdheight = 0
