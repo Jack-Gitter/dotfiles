@@ -23,5 +23,5 @@ end
 
 vim.keymap.set('n', '<leader>ff', function() snacks.picker.files({ cwd = ws() }) end)
 vim.keymap.set('n', '<leader>gr', function() snacks.picker.grep({ cwd = ws() }) end)
-vim.keymap.set('n', '<leader>h', snacks.picker.help)
+vim.keymap.set('n', '<leader>hh', snacks.picker.help)
 vim.keymap.set('n', '<leader>qf', qf)
