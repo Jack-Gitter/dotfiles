@@ -4,7 +4,7 @@ vim.api.nvim_create_user_command('GitMerge', function()
 		vim.notify('git jump failed')
 		return
 	end
-	vim.fn.setqflist({}, '', {
+	vim.fn.setqflist({}, ' ', {
 		title = 'git jump merge',
 		lines = lines
 	})
