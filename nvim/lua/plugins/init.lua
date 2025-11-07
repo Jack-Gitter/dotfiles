@@ -1,6 +1,5 @@
 vim.pack.add({
-	-- { src = 'https://github.com/everviolet/nvim',                 name = 'evergarden' },
-	{ src = 'https://github.com/Kaikacy/Lemons.nvim',             name = 'lemons' },
+	{ src = 'https://github.com/everviolet/nvim',                 name = 'evergarden' },
 	{ src = 'https://github.com/stevearc/conform.nvim',           name = 'conform.nvim' },
 	{ src = 'https://github.com/lewis6991/gitsigns.nvim',         name = 'gitsigns.nvim' },
 	{ src = 'https://github.com/mason-org/mason.nvim',            name = 'mason.nvim' },
