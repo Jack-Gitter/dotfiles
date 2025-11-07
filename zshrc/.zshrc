@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # COMMAND PROMPT
-export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starshipconfig/starship.toml
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 eval "$(starship init zsh 2>/dev/null || echo '')"
 
 # FUZZY FIND DIRS
