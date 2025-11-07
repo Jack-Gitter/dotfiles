@@ -1,0 +1,9 @@
+[user]
+    name = Jack Gitter
+	email = jack.a.gitter@gmail.com
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[alias]
+  jump = "!$(brew --prefix git)/share/git-core/contrib/git-jump/git-jump"
