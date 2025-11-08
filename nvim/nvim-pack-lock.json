@@ -3,7 +3,9 @@
     "blink": {
       "version": "'v1.7.0'"
     },
-    "conform.nvim": [],
+    "conform.nvim": {
+      "rev": "cde4da5"
+    },
     "evergarden": [],
     "gitsigns.nvim": [],
     "lemons": {
@@ -16,6 +18,8 @@
     },
     "nvim-tmux-navigation": [],
     "oil.nvim": [],
-    "snacks.nvim": []
+    "snacks.nvim": {
+      "rev": "eee204d"
+    }
   }
 }
