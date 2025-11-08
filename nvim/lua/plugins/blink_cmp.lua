@@ -6,10 +6,6 @@ blink.setup({
 		nerd_font_variant = 'mono'
 	},
 	completion = {
-		trigger = {
-			show_on_keyword = false,
-			show_on_trigger_character = true
-		},
 		documentation = { auto_show = false }
 	},
 	sources = {
