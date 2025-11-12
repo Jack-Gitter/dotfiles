@@ -1,21 +1,3 @@
-local evergarden = require('evergarden')
-
-evergarden.setup({
-	theme = {
-		variant = 'spring',
-		accent = 'green',
-	},
-	editor = {
-		transparent_background = false,
-		sign = { color = 'none' },
-		float = {
-			color = 'mantle',
-			solid_border = false,
-		},
-		completion = {
-			color = 'surface0',
-		},
-	},
-})
-
-vim.cmd('colorscheme evergarden')
+local colors = require('lemons.colors')
+colors.black = '#1a1a1a'
+vim.cmd('colorscheme lemons')

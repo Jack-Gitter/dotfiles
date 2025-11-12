@@ -10,7 +10,7 @@
     "gitsigns.nvim": [],
     "lemons": {
       "rev": "56660c2",
-      "src": "https://github.com/Kaikacy/Lemons.nvim"
+      "src": "https://github.com/kaikacy/lemons.nvim"
     },
     "mason.nvim": [],
     "mini-icons": {
