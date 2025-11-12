@@ -1,6 +1,6 @@
 theme = Dracula+
-font-size = 16
-font-family =  "DinaRemaster"
+font-size = 15
+font-family =  "BigBlueTerm437 Nerd Font Mono"
 cursor-style-blink = false
 shell-integration-features = no-cursor
 mouse-hide-while-typing = true
