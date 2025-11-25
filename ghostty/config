@@ -13,3 +13,4 @@ macos-icon = retro
 background-opacity = 0.8
 window-decoration = false
 cursor-color = #E4A5A5
+background-blur = 20
