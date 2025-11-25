@@ -1,4 +1,2 @@
-local colors = require('lemons.colors')
-colors.black = '#1a1a1a'
-colors.gray = '#4a4a4a'
-vim.cmd('colorscheme lemons')
+require('rose-pine')
+vim.cmd('colorscheme rose-pine')

@@ -1,6 +1,0 @@
-local colors = require('lemons.colors')
-colors.black = '#1a1a1a'
-colors.dark_gray = '#232323'
-colors.gray = '#2b2b2b'
-colors.light_gray = '#8a8a8a'
-vim.cmd('colorscheme lemons')

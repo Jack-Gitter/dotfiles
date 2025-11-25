@@ -1,6 +1,6 @@
-theme = Dracula+
+theme = calamity
 font-size = 15
-font-family =  "Jetbrains Mono"
+font-family =  Jetbrains Mono
 cursor-style-blink = false
 shell-integration-features = no-cursor
 mouse-hide-while-typing = true
@@ -11,3 +11,4 @@ copy-on-select = clipboard
 click-repeat-interval = 0 
 macos-icon = retro
 background-opacity = 0.8
+window-decoration = false
