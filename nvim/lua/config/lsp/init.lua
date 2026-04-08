@@ -1,1 +1,1 @@
-vim.lsp.enable({ 'ts', 'lua', 'c' })
+vim.lsp.enable({ 'ts', 'lua', 'c', 'pyright' })
