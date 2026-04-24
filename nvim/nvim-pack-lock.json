@@ -13,6 +13,8 @@
     },
     "evergarden": [],
     "gitsigns.nvim": [],
+    "gruvbox": [],
+    "gruvbox-material": [],
     "lemons": {
       "rev": "56660c2",
       "src": "https://github.com/kaikacy/lemons.nvim"
