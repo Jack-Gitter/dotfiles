@@ -1,2 +1,2 @@
-require('rose-pine')
-vim.cmd('colorscheme rose-pine')
+-- require('gruvbox')
+vim.cmd('colorscheme gruvbox-material')

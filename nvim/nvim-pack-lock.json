@@ -3,11 +3,18 @@
     "blink": {
       "version": "'v1.7.0'"
     },
+    "codecomanion.nvim": {
+      "rev": "4b3f17b",
+      "src": "https://www.github.com/olimorris/codecompanion.nvim",
+      "version": "19.0.0 - 20.0.0"
+    },
     "conform.nvim": {
       "rev": "cde4da5"
     },
     "evergarden": [],
     "gitsigns.nvim": [],
+    "gruvbox": [],
+    "gruvbox-material": [],
     "lemons": {
       "rev": "56660c2",
       "src": "https://github.com/kaikacy/lemons.nvim"
@@ -18,6 +25,10 @@
     },
     "nvim-tmux-navigation": [],
     "oil.nvim": [],
+    "plenary.nvim": {
+      "rev": "b9fd522",
+      "src": "https://www.github.com/nvim-lua/plenary.nvim"
+    },
     "rosepine": {
       "rev": "cf2a288",
       "src": "https://github.com/rose-pine/neovim"
