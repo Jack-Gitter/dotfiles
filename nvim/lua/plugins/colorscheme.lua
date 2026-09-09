@@ -1,2 +1,6 @@
+-- require('sunbather')
+-- vim.cmd('colorscheme sunbather')
+-- vim.cmd('colorscheme vividchalk')
+vim.cmd('colorscheme srcery')
 -- require('gruvbox')
-vim.cmd('colorscheme gruvbox-material')
+-- vim.cmd('colorscheme gruvbox-material')

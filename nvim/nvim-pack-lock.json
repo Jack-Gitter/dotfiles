@@ -35,6 +35,18 @@
     },
     "snacks.nvim": {
       "rev": "eee204d"
+    },
+    "srcery": {
+      "rev": "d4889a8",
+      "src": "https://github.com/srcery-colors/srcery-vim"
+    },
+    "sunbather.nvim": {
+      "rev": "64506a0",
+      "src": "https://github.com/nikolvs/vim-sunbather"
+    },
+    "vivid": {
+      "rev": "be5c625",
+      "src": "https://github.com/tpope/vim-vividchalk"
     }
   }
 }
